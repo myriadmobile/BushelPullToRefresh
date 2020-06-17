@@ -1,0 +1,16 @@
+PODS:
+  - BushelRefresh (0.1.0)
+
+DEPENDENCIES:
+  - BushelRefresh (from `../`)
+
+EXTERNAL SOURCES:
+  BushelRefresh:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BushelRefresh: fcfa2bf7432619d7d5dc95e3ced8f9d9a6111352
+
+PODFILE CHECKSUM: 252235b13dfd68444f689dd4bd84fbd46fe2ebbb
+
+COCOAPODS: 1.9.1

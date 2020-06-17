@@ -1,0 +1,6 @@
+framework module Pods_BushelRefresh_Example {
+  umbrella header "Pods-BushelRefresh_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

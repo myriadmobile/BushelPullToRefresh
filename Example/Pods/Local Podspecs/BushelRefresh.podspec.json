@@ -1,0 +1,22 @@
+{
+  "name": "BushelRefresh",
+  "version": "0.1.0",
+  "summary": "A short description of BushelRefresh.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Alex Larson/BushelRefresh",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Alex Larson": "alarson@bushelpowered.com"
+  },
+  "source": {
+    "git": "https://github.com/Alex Larson/BushelRefresh.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "BushelRefresh/Classes/**/*"
+}
