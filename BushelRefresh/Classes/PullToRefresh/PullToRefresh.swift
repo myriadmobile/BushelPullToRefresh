@@ -12,7 +12,7 @@ public typealias RefreshAction = () -> Void
 
 public enum RefreshState {
     case stopped
-    case triggered
+    case committed
     case loading
 }
 
@@ -26,23 +26,30 @@ public enum RefreshPostion {
 
 
 
+
+
+
+
+
 public protocol PullToRefresh: class {
     //View
     var pullToRefreshView: PullToRefreshView { get set }
     var showsPullToRefresh: Bool { get set }
     
     //Actions
-    func addPullToRefesh(action: RefreshAction)
-    func addPullToRefesh(action: RefreshAction, position: RefreshPostion)
+    func addPullToRefesh(action: @escaping RefreshAction)
+    func addPullToRefesh(action: @escaping RefreshAction, position: RefreshPostion)
     func triggerPullToRefresh()
 }
 
+//Primary layout and behavior
 extension UIScrollView: PullToRefresh {
     
     //State
     public var pullToRefreshView: PullToRefreshView {
         get {
-            return DefaultPullToRefreshView()
+            guard let existingView = self.subviews.compactMap({ $0 as? PullToRefreshView}).first else { return DefaultPullToRefreshView.instanceFromNib() }
+            return existingView
         }
         set {
             //TODO: Remove when set?
@@ -58,50 +65,53 @@ extension UIScrollView: PullToRefresh {
         }
     }
     
-    open override func layoutIfNeeded() { //TODO: Maybe layout subviews?
-        super.layoutIfNeeded()
-        
-//        //Only continue if we actually have a pullToRefreshView on our scrollview, otherwise there is no point in doing this math
-//        guard self.subviews.contains(pullToRefreshView) else { return }
-//
-//        //Determine the ideal size of the refresh view
-//        let maxSize = CGSize(width: self.bounds.size.width, height: CGFloat.greatestFiniteMagnitude)
-//        let fitSize = pullToRefreshView.systemLayoutSizeFitting(maxSize)
-//
-//        //Determine the necessary y origin given the fit size
-//        var yOrigin: CGFloat = 0
-//
-//        switch position {
-//        case .top: yOrigin = -fitSize.height
-//        case .bottom: yOrigin = self.contentSize.height
-//        }
-//
-//        //Update the the view to be in the correct location
-//        pullToRefreshView.frame = .init(x: 0, y: yOrigin, width: self.bounds.size.width, height: fitSize.height)
-    }
-    
     //Actions
-    public func addPullToRefesh(action: RefreshAction) {
+    public func addPullToRefesh(action: @escaping RefreshAction) {
         addPullToRefesh(action: action, position: .top)
     }
     
-    public func addPullToRefesh(action: RefreshAction, position: RefreshPostion) {
-//        self.position = position
-//
-//        //Clear any existing PTR views
-//        let pullToRefreshViews = self.subviews.filter({ $0 is PullToRefreshView })
-//        pullToRefreshViews.forEach({ $0.removeFromSuperview() })
-//
-//        //Add our new PTR view
-//        //TODO: Determine necessary size; perhaps do in a layout action?
-//        //TODO: Maybe have the PTRV hold the action? It might be simpler. But - should the action change just because the view is changing? (E.g. replace the view replaces the action)
-//        self.addSubview(pullToRefreshView)
-//
-//        //TODO:
+    public func addPullToRefesh(action: @escaping RefreshAction, position: RefreshPostion) {
+        //Clear any existing PTR views
+        let pullToRefreshViews = self.subviews.filter({ $0 is PullToRefreshView })
+        pullToRefreshViews.forEach({ $0.removeFromSuperview() })
+
+        //Add our new PTR view
+        self.addSubview(pullToRefreshView) //TODO: Determine necessary size; perhaps do in a layout action?
+        
+        //Setup the PTR state
+        //NOTE: This must be done AFTER adding it to the subview as our computed var retrieves the PTR subview. We do this because extensions cannot hold normal vars.
+        pullToRefreshView.delegate = self
+        pullToRefreshView.position = position
+        pullToRefreshView.refreshAction = action
+        
+        //Add the constraints
+        let leadingConstraint = NSLayoutConstraint(item: pullToRefreshView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
+        let trailingConstraint = NSLayoutConstraint(item: pullToRefreshView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: pullToRefreshView, attribute: .bottom, relatedBy: .lessThanOrEqual, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+        
+        pullToRefreshView.translatesAutoresizingMaskIntoConstraints = false
+        self.addConstraints([leadingConstraint, trailingConstraint, bottomConstraint])
     }
     
     public func triggerPullToRefresh() {
-        self.pullToRefreshView.startAnimating()
+        self.pullToRefreshView.trigger()
+    }
+    
+}
+
+//Delegate
+extension UIScrollView: PullToRefreshDelegate {
+    
+    public func becameStopped(view: PullToRefreshView) {
+        //TODO:
+    }
+    
+    public func becameCommitted(view: PullToRefreshView) {
+        //TODO:
+    }
+    
+    public func becameLoading(view: PullToRefreshView) {
+        //TODO:
     }
     
 }

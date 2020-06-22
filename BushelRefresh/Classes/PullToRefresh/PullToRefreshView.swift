@@ -15,13 +15,14 @@ public protocol PullToRefreshView: UIView {
     var delegate: PullToRefreshDelegate? { get set }
     
     //Actions
+    func trigger()
     func startAnimating()
     func stopAnimating()
 }
 
 public protocol PullToRefreshDelegate: UIScrollView {
     func becameStopped(view: PullToRefreshView) //TODO: Naming
-    func becameTriggered(view: PullToRefreshView)
+    func becameCommitted(view: PullToRefreshView)
     func becameLoading(view: PullToRefreshView)
 }
 
@@ -40,7 +41,7 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
             //Update UI for the new state
             switch newValue {
             case .stopped: layoutStateStopped()
-            case .triggered: layoutStateTriggered()
+            case .committed: layoutStateCommitted()
             case .loading: layoutStateLoading()
             }
         }
@@ -95,9 +96,9 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
     //
     // MARK: Initialization
     //
-    class func instanceFromNib(delegate: PullToRefreshDelegate) -> DefaultPullToRefreshView {
-        let view = UINib(nibName: "DefaultPullToRefreshView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! DefaultPullToRefreshView
-        view.delegate = delegate
+    class func instanceFromNib() -> DefaultPullToRefreshView {
+        let bundle = Bundle.init(for: self)
+        let view = UINib(nibName: "DefaultPullToRefreshView", bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as! DefaultPullToRefreshView
         view.style()
         return view
     }
@@ -119,9 +120,11 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
         
         self.activityIndicator.isHidden = true
         self.activityIndicator.stopAnimating()
+        
+        delegate?.becameStopped(view: self)
     }
     
-    func layoutStateTriggered() {
+    func layoutStateCommitted() {
         self.label.text = triggeredTitle
         
         self.arrowImageView.isHidden = false
@@ -129,6 +132,8 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
         
         self.activityIndicator.isHidden = true
         self.activityIndicator.stopAnimating()
+        
+        delegate?.becameCommitted(view: self)
     }
     
     func layoutStateLoading() {
@@ -139,11 +144,18 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
         
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
+        
+        delegate?.becameLoading(view: self)
     }
-    
+
     //
     // MARK: Actions
     //
+    func trigger() {
+        refreshAction()
+        self.state = .loading
+    }
+    
     func startAnimating() {
         self.state = .loading
     }

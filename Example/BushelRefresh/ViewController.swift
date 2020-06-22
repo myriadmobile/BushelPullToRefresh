@@ -10,7 +10,6 @@ import UIKit
 import BushelRefresh
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
 
     //UI
     @IBOutlet var tableView: UITableView!
@@ -23,11 +22,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //PTR
         tableView.addPullToRefesh(action: {
+            print("Fetching data!")
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.tableView.pullToRefreshView.stopAnimating()
                 self.tableView.reloadData()
             }
         }, position: .top)
+    }
+    
+    //Actions
+    @IBAction func stop(_ sender: Any) {
+        tableView.pullToRefreshView.stopAnimating()
+    }
+    
+    @IBAction func trigger(_ sender: Any) {
+        tableView.pullToRefreshView.trigger()
+    }
+    
+    @IBAction func start(_ sender: Any) {
+        tableView.pullToRefreshView.startAnimating()
     }
     
     //TableView
