@@ -54,56 +54,8 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
         scrollView.addConstraints([leadingConstraint, widthConstraint, verticalConstraint])
     }
     
-//    func deregisterObservers() {
-//        contentOffsetObserver = nil
-//        contentSizeObserver = nil
-//        frameObserver = nil
-//
-//        resetScrollViewContentInset()
-//    }
-//
-//    func resetScrollViewContentInset() {
-//        guard var currentInsets = self.scrollView?.contentInset else { return }
-//
-//        switch position {
-//        case .top:
-//            currentInsets.top = self.originalTopInset ?? 0
-//        case .bottom:
-//            currentInsets.bottom = self.originalBottomInset ?? 0
-//            currentInsets.top = self.originalTopInset ?? 0
-//
-//            self.setScrollViewContentInset(contentInset: currentInsets)
-//        }
-//    }
-//
-//    func setScrollViewInsetForLoading() {
-//        guard let scrollView = scrollView else { return }
-//        let offset = max(scrollView.contentOffset.y * -1, 0)
-//        var currentInsets = scrollView.contentInset
-//
-//        switch position {
-//        case .top:
-//            currentInsets.top = min(offset, self.originalTopInset ?? 0 + self.bounds.size.height)
-//        case .bottom:
-//            currentInsets.bottom = min(offset, self.originalBottomInset ?? 0 + self.bounds.size.height)
-//
-//            self.setScrollViewContentInset(contentInset: currentInsets)
-//        }
-//    }
-//
-//    func setScrollViewContentInset(contentInset: UIEdgeInsets) {
-//        UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
-//            self.scrollView?.contentInset = contentInset
-//        }, completion: nil)
-//    }
-    
     var loadingThreshold: CGFloat {
-        switch position {
-        case .top:
-            return self.frame.origin.y - (self.originalTopInset ?? 0);
-        case .bottom:
-            return max(scrollView.contentSize.height - scrollView.bounds.size.height, 0.0) + self.bounds.size.height + (self.originalBottomInset ?? 0)
-        }
+        return self.frame.origin.y - (self.originalTopInset ?? 0)
     }
     
     func scrollViewDidScroll(contentOffset: CGPoint) {
@@ -112,36 +64,20 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
                 self.trigger()
 //                self.state = .loading //TODO: TRIGGER!
             }
-            else if(contentOffset.y < loadingThreshold && scrollView.isDragging && self.state == .stopped && self.position == .top) {
+            else if(contentOffset.y < loadingThreshold && scrollView.isDragging && self.state == .stopped) {
                 self.state = .committed
             }
-            else if(contentOffset.y >= loadingThreshold && self.state != .stopped && self.position == .top) {
-                self.state = .stopped
-            }
-            else if(contentOffset.y > loadingThreshold && scrollView.isDragging && self.state == .stopped && self.position == .bottom) {
-                self.state = .committed
-            }
-            else if(contentOffset.y <= loadingThreshold && self.state != .stopped && self.position == .bottom) {
+            else if(contentOffset.y >= loadingThreshold && self.state != .stopped) {
                 self.state = .stopped
             }
                 
         } else {
             var offset: CGFloat
             var contentInset: UIEdgeInsets
-            switch position {
-            case .top:
-                    offset = CGFloat(max(scrollView.contentOffset.y * -1, 0.0))
-                    offset = CGFloat(min(offset, (originalTopInset ?? 0) + bounds.size.height))
-                    contentInset = scrollView.contentInset
-                    scrollView.contentInset = UIEdgeInsets(top: offset, left: contentInset.left, bottom: contentInset.bottom, right: contentInset.right)
-            case .bottom:
-                    if scrollView.contentSize.height >= scrollView.bounds.size.height {
-                        offset = CGFloat(max(scrollView.contentSize.height - scrollView.bounds.size.height + bounds.size.height, 0.0))
-                        offset = CGFloat(min(offset, (originalBottomInset ?? 0) + bounds.size.height))
-                        contentInset = scrollView.contentInset
-                        scrollView.contentInset = UIEdgeInsets(top: contentInset.top, left: contentInset.left, bottom: offset, right: contentInset.right)
-                }
-            }
+            offset = CGFloat(max(scrollView.contentOffset.y * -1, 0.0))
+            offset = CGFloat(min(offset, (originalTopInset ?? 0) + bounds.size.height))
+            contentInset = scrollView.contentInset
+            scrollView.contentInset = UIEdgeInsets(top: offset, left: contentInset.left, bottom: contentInset.bottom, right: contentInset.right)
         }
     }
     
@@ -158,12 +94,6 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
             case .committed: layoutStateCommitted()
             case .loading: layoutStateLoading()
             }
-        }
-    }
-    
-    var position: RefreshPostion = .top {
-        didSet {
-            //TODO: Tell the scrollview to update based on the new position and state
         }
     }
     
@@ -187,14 +117,7 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
     
     func setArrowOrientation(isStopped: Bool, animated: Bool) {
         //Determine the orientation based on the refresh view position
-        var shouldPointUp = true
-        
-        switch position {
-        case .top:
-            shouldPointUp = !isStopped
-        case .bottom:
-            shouldPointUp = isStopped
-        }
+        let shouldPointUp = !isStopped
         
         //Calculate the rotation
         let degrees: CGFloat = shouldPointUp ? 0 : 180

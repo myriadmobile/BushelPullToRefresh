@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.tableView.pullToRefreshView.stopAnimating()
                 self.tableView.reloadData()
             }
-        }, position: .top)
+        })
     }
     
     //Actions
