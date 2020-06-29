@@ -7,20 +7,20 @@
 
 import UIKit
 
+//NOTE: This is a top PTR view. Creating a bottom PTR will require subclassing or creating a new view.
+
 public protocol PullToRefreshView: UIView {
     //Copied from SVPTR
-    var scrollView: UIScrollView? { get set }
+    var scrollView: UIScrollView! { get set }
     var originalTopInset: CGFloat? { get set }
     var originalBottomInset: CGFloat? { get set }
     
     func registerObservers()
-    func deregisterObservers() 
+    func setupConstraints()
     
     //State
     var state: RefreshState { get set }
-    var position: RefreshPostion { get set }
     var refreshAction: RefreshAction { get set }
-    var delegate: PullToRefreshDelegate? { get set }
     
     //Actions
     func trigger()
@@ -28,120 +28,100 @@ public protocol PullToRefreshView: UIView {
     func stopAnimating()
 }
 
-public protocol PullToRefreshDelegate: UIScrollView {
-    func becameStopped(view: PullToRefreshView) //TODO: Naming
-    func becameCommitted(view: PullToRefreshView)
-    func becameLoading(view: PullToRefreshView)
-}
-
 //Default Implementation
 class DefaultPullToRefreshView: UIView, PullToRefreshView {
     
-    var scrollView: UIScrollView?
+    var scrollView: UIScrollView!
     var originalTopInset: CGFloat?
     var originalBottomInset: CGFloat?
     
     var contentOffsetObserver: NSKeyValueObservation?
-    var contentSizeObserver: NSKeyValueObservation?
-    var frameObserver: NSKeyValueObservation?
     
     func registerObservers() {
         contentOffsetObserver = scrollView?.observe(\.contentOffset) { [weak self] (scrollView, change) in
+            guard self?.isHidden == false else { return }
             self?.scrollViewDidScroll(contentOffset: scrollView.contentOffset)
         }
-
-        contentSizeObserver = scrollView?.observe(\.contentSize) { [weak self] (scrollView, change) in
-            self?.layoutSubviews()
-    //
-    //            [self layoutSubviews];
-    //
-    //            CGFloat yOrigin;
-    //            switch (self.position) {
-    //                case SVPullToRefreshPositionTop:
-    //                    yOrigin = -SVPullToRefreshViewHeight;
-    //                    break;
-    //                case SVPullToRefreshPositionBottom:
-    //                    yOrigin = MAX(self.scrollView.contentSize.height, self.scrollView.bounds.size.height);
-    //                    break;
-    //            }
-    //            self.frame = CGRectMake(0, yOrigin, self.bounds.size.width, SVPullToRefreshViewHeight);
-        }
-
-        frameObserver = scrollView?.observe(\.frame) { [weak self] (scrollView, change) in
-            self?.layoutSubviews()
-        }
     }
     
-    func deregisterObservers() {
-        contentOffsetObserver = nil
-        contentSizeObserver = nil
-        frameObserver = nil
+    func setupConstraints() {
+        translatesAutoresizingMaskIntoConstraints = false
         
-        resetScrollViewContentInset()
+        //NOTE: We need to use a width constraint because a trailing constraint could be ambiguous
+        let leadingConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: scrollView, attribute: .leading, multiplier: 1, constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: scrollView, attribute: .width, multiplier: 1, constant: 0)
+        let verticalConstraint = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .lessThanOrEqual, toItem: scrollView, attribute: .top, multiplier: 1, constant: 0)
+        scrollView.addConstraints([leadingConstraint, widthConstraint, verticalConstraint])
     }
     
-    func resetScrollViewContentInset() {
-        guard var currentInsets = self.scrollView?.contentInset else { return }
-        
+//    func deregisterObservers() {
+//        contentOffsetObserver = nil
+//        contentSizeObserver = nil
+//        frameObserver = nil
+//
+//        resetScrollViewContentInset()
+//    }
+//
+//    func resetScrollViewContentInset() {
+//        guard var currentInsets = self.scrollView?.contentInset else { return }
+//
+//        switch position {
+//        case .top:
+//            currentInsets.top = self.originalTopInset ?? 0
+//        case .bottom:
+//            currentInsets.bottom = self.originalBottomInset ?? 0
+//            currentInsets.top = self.originalTopInset ?? 0
+//
+//            self.setScrollViewContentInset(contentInset: currentInsets)
+//        }
+//    }
+//
+//    func setScrollViewInsetForLoading() {
+//        guard let scrollView = scrollView else { return }
+//        let offset = max(scrollView.contentOffset.y * -1, 0)
+//        var currentInsets = scrollView.contentInset
+//
+//        switch position {
+//        case .top:
+//            currentInsets.top = min(offset, self.originalTopInset ?? 0 + self.bounds.size.height)
+//        case .bottom:
+//            currentInsets.bottom = min(offset, self.originalBottomInset ?? 0 + self.bounds.size.height)
+//
+//            self.setScrollViewContentInset(contentInset: currentInsets)
+//        }
+//    }
+//
+//    func setScrollViewContentInset(contentInset: UIEdgeInsets) {
+//        UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
+//            self.scrollView?.contentInset = contentInset
+//        }, completion: nil)
+//    }
+    
+    var loadingThreshold: CGFloat {
         switch position {
         case .top:
-            currentInsets.top = self.originalTopInset ?? 0
+            return self.frame.origin.y - (self.originalTopInset ?? 0);
         case .bottom:
-            currentInsets.bottom = self.originalBottomInset ?? 0
-            currentInsets.top = self.originalTopInset ?? 0
-            
-            self.setScrollViewContentInset(contentInset: currentInsets)
-        }
-    }
-    
-    func setScrollViewContentInset(contentInset: UIEdgeInsets) {
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
-            self.scrollView?.contentInset = contentInset
-        }, completion: nil)
-    }
-    
-    func setScrollViewInsetForLoading() {
-        guard let scrollView = scrollView else { return }
-        let offset = max(scrollView.contentOffset.y * -1, 0)
-        var currentInsets = scrollView.contentInset
-        
-        switch position {
-        case .top:
-            currentInsets.top = min(offset, self.originalTopInset ?? 0 + self.bounds.size.height)
-        case .bottom:
-            currentInsets.bottom = min(offset, self.originalBottomInset ?? 0 + self.bounds.size.height)
-            
-            self.setScrollViewContentInset(contentInset: currentInsets)
+            return max(scrollView.contentSize.height - scrollView.bounds.size.height, 0.0) + self.bounds.size.height + (self.originalBottomInset ?? 0)
         }
     }
     
     func scrollViewDidScroll(contentOffset: CGPoint) {
-        guard let scrollView = scrollView else { return }
-        
         if self.state != .loading {
-            var scrollOffsetThreshold: CGFloat = 0
-            
-            switch position {
-            case .top:
-                scrollOffsetThreshold = self.frame.origin.y - (self.originalTopInset ?? 0);
-            case .bottom:
-                scrollOffsetThreshold = max(scrollView.contentSize.height - scrollView.bounds.size.height, 0.0) + self.bounds.size.height + (self.originalBottomInset ?? 0)
-            }
-            
             if(!scrollView.isDragging && self.state == .committed) {
                 self.trigger()
 //                self.state = .loading //TODO: TRIGGER!
             }
-            else if(contentOffset.y < scrollOffsetThreshold && scrollView.isDragging && self.state == .stopped && self.position == .top) {
+            else if(contentOffset.y < loadingThreshold && scrollView.isDragging && self.state == .stopped && self.position == .top) {
                 self.state = .committed
             }
-            else if(contentOffset.y >= scrollOffsetThreshold && self.state != .stopped && self.position == .top) {
+            else if(contentOffset.y >= loadingThreshold && self.state != .stopped && self.position == .top) {
                 self.state = .stopped
             }
-            else if(contentOffset.y > scrollOffsetThreshold && scrollView.isDragging && self.state == .stopped && self.position == .bottom) {
+            else if(contentOffset.y > loadingThreshold && scrollView.isDragging && self.state == .stopped && self.position == .bottom) {
                 self.state = .committed
             }
-            else if(contentOffset.y <= scrollOffsetThreshold && self.state != .stopped && self.position == .bottom) {
+            else if(contentOffset.y <= loadingThreshold && self.state != .stopped && self.position == .bottom) {
                 self.state = .stopped
             }
                 
@@ -167,9 +147,7 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
     
     //
     // MARK: State
-    //
-    weak var delegate: PullToRefreshDelegate?
-    
+    //    
     var state: RefreshState = .stopped {
         willSet {
             guard state != newValue else { return }
@@ -256,8 +234,6 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
         
         self.activityIndicator.isHidden = true
         self.activityIndicator.stopAnimating()
-        
-        delegate?.becameStopped(view: self)
     }
     
     func layoutStateCommitted() {
@@ -268,8 +244,6 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
         
         self.activityIndicator.isHidden = true
         self.activityIndicator.stopAnimating()
-        
-        delegate?.becameCommitted(view: self)
     }
     
     func layoutStateLoading() {
@@ -280,8 +254,6 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
         
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
-        
-        delegate?.becameLoading(view: self)
     }
 
     //
