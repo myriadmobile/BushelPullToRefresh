@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "BushelRefresh/Classes/**/*"
+  "source_files": "BushelRefresh/Classes/**/*",
+  "resource_bundles": {
+    "BushelRefresh": [
+      "BushelRefresh/Assets/*.png"
+    ]
+  }
 }

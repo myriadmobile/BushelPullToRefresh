@@ -5,7 +5,6 @@ target 'BushelRefresh_Example' do
 
   target 'BushelRefresh_Tests' do
     inherit! :search_paths
-
-    
   end
+  
 end

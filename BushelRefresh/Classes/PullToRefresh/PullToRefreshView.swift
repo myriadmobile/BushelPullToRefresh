@@ -12,8 +12,7 @@ import UIKit
 public protocol PullToRefreshView: UIView {
     //Copied from SVPTR
     var scrollView: UIScrollView! { get set }
-    var originalTopInset: CGFloat? { get set }
-    var originalBottomInset: CGFloat? { get set }
+    var originalInset: CGFloat! { get set }
     
     func registerObservers()
     func setupConstraints()
@@ -31,10 +30,9 @@ public protocol PullToRefreshView: UIView {
 //Default Implementation
 class DefaultPullToRefreshView: UIView, PullToRefreshView {
     
+    //ScrollView
     var scrollView: UIScrollView!
-    var originalTopInset: CGFloat?
-    var originalBottomInset: CGFloat?
-    
+    var originalInset: CGFloat!
     var contentOffsetObserver: NSKeyValueObservation?
     
     func registerObservers() {
@@ -55,29 +53,22 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
     }
     
     var loadingThreshold: CGFloat {
-        return self.frame.origin.y - (self.originalTopInset ?? 0)
+        return self.frame.origin.y - originalInset
     }
     
     func scrollViewDidScroll(contentOffset: CGPoint) {
-        if self.state != .loading {
-            if(!scrollView.isDragging && self.state == .committed) {
-                self.trigger()
-//                self.state = .loading //TODO: TRIGGER!
-            }
-            else if(contentOffset.y < loadingThreshold && scrollView.isDragging && self.state == .stopped) {
-                self.state = .committed
-            }
-            else if(contentOffset.y >= loadingThreshold && self.state != .stopped) {
-                self.state = .stopped
-            }
-                
-        } else {
+        switch state {
+        case .loading:
+            //TODO: This math seems funky
             var offset: CGFloat
-            var contentInset: UIEdgeInsets
             offset = CGFloat(max(scrollView.contentOffset.y * -1, 0.0))
-            offset = CGFloat(min(offset, (originalTopInset ?? 0) + bounds.size.height))
-            contentInset = scrollView.contentInset
-            scrollView.contentInset = UIEdgeInsets(top: offset, left: contentInset.left, bottom: contentInset.bottom, right: contentInset.right)
+            offset = CGFloat(min(offset, originalInset + bounds.size.height))
+            scrollView.contentInset.top = offset
+        case .committed:
+            if !scrollView.isDragging { self.trigger() }
+            else if contentOffset.y >= loadingThreshold { self.state = .stopped }
+        case .stopped:
+            if contentOffset.y < loadingThreshold && scrollView.isDragging { self.state = .committed }
         }
     }
     
@@ -124,7 +115,7 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
         let radians = degrees * .pi / 180
 
         //Animate to the new orientation
-        let animationDuration = animated ? 0 : 0.2
+        let animationDuration = animated ? 0.2 : 0
         UIView.animate(withDuration: animationDuration, delay: 0, options: [.allowUserInteraction], animations: {
             self.arrowImageView.layer.transform = CATransform3DMakeRotation(radians, 0, 0, 1);
         })
@@ -134,15 +125,20 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
     // MARK: Initialization
     //
     class func instanceFromNib() -> DefaultPullToRefreshView {
-        let bundle = Bundle.init(for: self)
+        let bundle = Bundle(for: self)
         let view = UINib(nibName: "DefaultPullToRefreshView", bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as! DefaultPullToRefreshView
         view.style()
         return view
     }
     
     func style() {
+        let bundle = Bundle(for: DefaultPullToRefreshView.self)
+        let bundleURL = bundle.resourceURL?.appendingPathComponent("BushelRefresh.bundle")
+        let resourceBundle = Bundle(url: bundleURL!) //TODO: Make this a static
+        
         self.label.textColor = .darkGray
         self.setArrowColor(.gray)
+        self.arrowImageView.image = UIImage(named: "Arrow", in: resourceBundle, compatibleWith: nil) //TODO: Bundle
         self.activityIndicator.activityIndicatorViewStyle = .gray
     }
     

@@ -64,10 +64,11 @@ extension UIScrollView: PullToRefresh {
         
         //Setup the PTR state
         //NOTE: This must be done AFTER adding it to the subview as our computed var retrieves the PTR subview. We do this because extensions cannot hold normal vars.
+        pullToRefreshView.accessibilityIdentifier = "PullToRefreshView" //TODO: Better place to do this?
+        pullToRefreshView.isAccessibilityElement = true
         pullToRefreshView.refreshAction = action
         pullToRefreshView.scrollView = self
-        pullToRefreshView.originalTopInset = self.contentInset.top //TODO: I'd love to remove these and determine the insets mathmatically
-        pullToRefreshView.originalBottomInset = self.contentInset.bottom
+        pullToRefreshView.originalInset = self.contentInset.top //TODO: I'd love to remove these and determine the insets mathmatically
         
         //Add the constraints
         pullToRefreshView.setupConstraints()
