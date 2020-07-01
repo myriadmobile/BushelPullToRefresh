@@ -35,9 +35,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeF-Iu-d4z">
                                         <rect key="frame" x="119.5" y="0.0" width="120" height="30"/>
-                                        <state key="normal" title="Trigger"/>
+                                        <state key="normal" title="Toggle Hidden"/>
                                         <connections>
-                                            <action selector="trigger:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mLd-Ao-5VT"/>
+                                            <action selector="toggleHidden:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gFT-ai-6oq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="day-hs-TH2">

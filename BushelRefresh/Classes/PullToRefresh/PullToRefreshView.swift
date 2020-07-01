@@ -22,7 +22,6 @@ public protocol PullToRefreshView: UIView {
     var refreshAction: RefreshAction { get set }
     
     //Actions
-    func trigger()
     func startAnimating()
     func stopAnimating()
 }
@@ -59,13 +58,9 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
     func scrollViewDidScroll(contentOffset: CGPoint) {
         switch state {
         case .loading:
-            //TODO: This math seems funky
-            var offset: CGFloat
-            offset = CGFloat(max(scrollView.contentOffset.y * -1, 0.0))
-            offset = CGFloat(min(offset, originalInset + bounds.size.height))
-            scrollView.contentInset.top = offset
+            break
         case .committed:
-            if !scrollView.isDragging { self.trigger() }
+            if !scrollView.isDragging { self.state = .loading }
             else if contentOffset.y >= loadingThreshold { self.state = .stopped }
         case .stopped:
             if contentOffset.y < loadingThreshold && scrollView.isDragging { self.state = .committed }
@@ -74,16 +69,20 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
     
     //
     // MARK: State
-    //    
+    //
+    private var previousState: RefreshState = .stopped
     var state: RefreshState = .stopped {
-        willSet {
-            guard state != newValue else { return }
+        didSet {
+            guard state != previousState else { return }
+            previousState = state
             
             //Update UI for the new state
-            switch newValue {
+            switch state {
             case .stopped: layoutStateStopped()
             case .committed: layoutStateCommitted()
-            case .loading: layoutStateLoading()
+            case .loading:
+                layoutStateLoading()
+                refreshAction()
             }
         }
     }
@@ -146,53 +145,75 @@ class DefaultPullToRefreshView: UIView, PullToRefreshView {
     // MARK: Layout
     //
     func layoutStateStopped() {
+        //Text
         self.label.text = stoppedTitle
         
+        //Arrow
         self.arrowImageView.isHidden = false
         self.setArrowOrientation(isStopped: true, animated: true)
         
+        //Activity Indicator
         self.activityIndicator.isHidden = true
         self.activityIndicator.stopAnimating()
+        
+        //Insets
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction], animations: {
+             self.scrollView.contentInset.top = self.originalInset
+        })
     }
     
     func layoutStateCommitted() {
+        //Text
         self.label.text = triggeredTitle
         
+        //Arrow
         self.arrowImageView.isHidden = false
         self.setArrowOrientation(isStopped: false, animated: true)
         
+        //Activity Indicator
         self.activityIndicator.isHidden = true
         self.activityIndicator.stopAnimating()
+        
+        //Insets
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction], animations: {
+            self.scrollView.contentInset.top = self.originalInset
+        })
     }
     
     func layoutStateLoading() {
+        //Text
         self.label.text = loadingTitle
         
+        //Arrow
         self.arrowImageView.isHidden = true
         self.setArrowOrientation(isStopped: true, animated: false)
         
+        //Activity Indicator
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
+        
+        //Insets
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction], animations: {
+            self.scrollView.contentInset.top = self.originalInset + self.frame.height
+            self.scrollView.setContentOffset(CGPoint(x: 0, y: self.loadingThreshold), animated: true)
+        })
+//        var offset: CGFloat
+//        offset = CGFloat(max(scrollView.contentOffset.y * -1, 0.0))
+//        offset = CGFloat(min(offset, originalInset + bounds.size.height))
+//        scrollView.contentInset.top = offset
     }
 
     //
     // MARK: Actions
     //
-    func trigger() {
-        refreshAction()
-        self.state = .loading
-    }
-    
     func startAnimating() {
+        guard !isHidden else { return }
         self.state = .loading
-        
-        //TODO: OFFSET
     }
     
     func stopAnimating() {
+        guard !isHidden else { return }
         self.state = .stopped
-        
-        //TODO: Offset
     }
     
 }

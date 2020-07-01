@@ -27,7 +27,6 @@ public protocol PullToRefresh: class {
     
     //Actions
     func addPullToRefesh(action: @escaping RefreshAction)
-    func triggerPullToRefresh()
 }
 
 //Primary layout and behavior
@@ -75,10 +74,6 @@ extension UIScrollView: PullToRefresh {
         
         //Observers
         pullToRefreshView.registerObservers()
-    }
-    
-    public func triggerPullToRefresh() {
-        self.pullToRefreshView.trigger()
     }
     
 }

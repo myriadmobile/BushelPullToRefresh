@@ -20,6 +20,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.contentInset.top = 100
+        
         //PTR
         tableView.addPullToRefesh(action: {
             print("Fetching data!")
@@ -36,12 +38,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.pullToRefreshView.stopAnimating()
     }
     
-    @IBAction func trigger(_ sender: Any) {
-        tableView.pullToRefreshView.trigger()
-    }
-    
     @IBAction func start(_ sender: Any) {
         tableView.pullToRefreshView.startAnimating()
+    }
+    
+    @IBAction func toggleHidden(_ sender: Any) {
+        tableView.showsPullToRefresh = !tableView.showsPullToRefresh
     }
     
     //TableView
