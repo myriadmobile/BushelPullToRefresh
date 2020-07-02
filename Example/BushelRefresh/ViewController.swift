@@ -20,14 +20,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.contentInset.top = 100
+//        tableView.contentInset.top = 100
         
         //PTR
-        tableView.addPullToRefesh(action: {
+        tableView.addPullToRefresh(action: {
             print("Fetching data!")
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.tableView.pullToRefreshView.stopAnimating()
+                self.tableView.pullToRefreshView?.stopAnimating()
                 self.tableView.reloadData()
             }
         })
@@ -35,11 +35,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //Actions
     @IBAction func stop(_ sender: Any) {
-        tableView.pullToRefreshView.stopAnimating()
+        tableView.pullToRefreshView?.stopAnimating()
     }
     
     @IBAction func start(_ sender: Any) {
-        tableView.pullToRefreshView.startAnimating()
+        tableView.pullToRefreshView?.startAnimating()
     }
     
     @IBAction func toggleHidden(_ sender: Any) {
