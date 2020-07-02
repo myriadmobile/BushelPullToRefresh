@@ -83,7 +83,6 @@ public class PullToRefreshTopContainer: UIView, PullToRefreshContainer {
         let trailingConstraint = NSLayoutConstraint(item: refreshView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
         let topConstraint = NSLayoutConstraint(item: refreshView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
         let bottomConstraint = NSLayoutConstraint(item: refreshView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
-        
         self.addConstraints([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
     }
     
@@ -93,9 +92,9 @@ public class PullToRefreshTopContainer: UIView, PullToRefreshContainer {
             self?.scrollViewDidScroll(contentOffset: scrollView.contentOffset)
         }
         
-//        refreshStateObserver = refreshView.observe(\.state) { [weak self] (scrollView, change) in
-//            //TODO: State KVO for insets
-//        }
+        refreshStateObserver = refreshView.observe(\.state) { [weak self] (scrollView, change) in
+            //TODO: State KVO for insets
+        }
     }
     
     

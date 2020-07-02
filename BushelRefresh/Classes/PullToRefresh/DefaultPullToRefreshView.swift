@@ -11,13 +11,14 @@ import UIKit
 // MARK: PullToRefresh View Protocol
 // This is the core set of rules that refresh views must meet. This allows us to keep the library customizable, but clean.
 //
-public enum RefreshState {
+public enum RefreshState: Int {
     case stopped
     case committed
     case loading
 }
 
 public protocol PullToRefreshView: UIView {
+    
     //Initialization
     static func createView() -> PullToRefreshView
     
@@ -70,10 +71,13 @@ public class DefaultPullToRefreshView: UIView, PullToRefreshView {
             guard state != newValue else { return }
             
             //Update UI for the new state
-            switch state {
-            case .stopped: layoutStateStopped()
-            case .committed: layoutStateCommitted()
-            case .loading: layoutStateLoading()
+            switch newValue {
+            case .stopped:
+                layoutStateStopped()
+            case .committed:
+                layoutStateCommitted()
+            case .loading:
+                layoutStateLoading()
             }
         }
     }
