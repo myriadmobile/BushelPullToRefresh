@@ -32,7 +32,7 @@ public protocol PullToRefreshContainer: UIView {
 // MARK: PullToRefresh Containers
 // These are default implementations to allow for top and bottom alignment. You can subclass or write your own implementation to meet your needs.
 //
-public class PullToRefreshTopContainer: UIView, PullToRefreshContainer {
+public class PullToRefreshTopContainer: UIView, PullToRefreshContainer, RefreshDelegate {
     
     public var scrollView: UIScrollView
     public var refreshView: PullToRefreshView
@@ -60,6 +60,7 @@ public class PullToRefreshTopContainer: UIView, PullToRefreshContainer {
         
         setupRefreshView()
         setupObservers()
+        self.refreshView.delegate = self
     }
     
     //
@@ -90,10 +91,6 @@ public class PullToRefreshTopContainer: UIView, PullToRefreshContainer {
         contentOffsetObserver = scrollView.observe(\.contentOffset) { [weak self] (scrollView, change) in
             guard self?.isHidden == false else { return }
             self?.scrollViewDidScroll(contentOffset: scrollView.contentOffset)
-        }
-        
-        refreshStateObserver = refreshView.observe(\.state) { [weak self] (scrollView, change) in
-            //TODO: State KVO for insets
         }
     }
     
@@ -126,30 +123,28 @@ public class PullToRefreshTopContainer: UIView, PullToRefreshContainer {
     //
     // MARK: Layout
     //
-    func layoutStateStopped() {
-        //Insets
+    public func didStop() {
         UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction], animations: {
              self.scrollView.contentInset.top = self.originalInset
         })
     }
     
-    func layoutStateCommitted() {
-        //Insets
+    public func didCommit() {
         UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction], animations: {
             self.scrollView.contentInset.top = self.originalInset
         })
     }
     
-    func layoutStateLoading() {
-        //Insets
+    public func didBeginLoading() {
         UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction], animations: {
             self.scrollView.contentInset.top = self.originalInset + self.frame.height
             self.scrollView.setContentOffset(CGPoint(x: 0, y: self.loadingThreshold), animated: true)
         })
-//        var offset: CGFloat
-//        offset = CGFloat(max(scrollView.contentOffset.y * -1, 0.0))
-//        offset = CGFloat(min(offset, originalInset + bounds.size.height))
-//        scrollView.contentInset.top = offset
+        
+        //        var offset: CGFloat
+        //        offset = CGFloat(max(scrollView.contentOffset.y * -1, 0.0))
+        //        offset = CGFloat(min(offset, originalInset + bounds.size.height))
+        //        scrollView.contentInset.top = offset
     }
     
 }

@@ -11,10 +11,16 @@ import UIKit
 // MARK: PullToRefresh View Protocol
 // This is the core set of rules that refresh views must meet. This allows us to keep the library customizable, but clean.
 //
-public enum RefreshState: Int {
+public enum RefreshState {
     case stopped
     case committed
     case loading
+}
+
+public protocol RefreshDelegate {
+    func didStop()
+    func didCommit()
+    func didBeginLoading()
 }
 
 public protocol PullToRefreshView: UIView {
@@ -23,14 +29,16 @@ public protocol PullToRefreshView: UIView {
     static func createView() -> PullToRefreshView
     
     //State
+    var delegate: RefreshDelegate? { get set }
     var state: RefreshState { get set }
     
     //Actions
     func startAnimating()
     func stopAnimating()
+    
 }
 
-//
+//r
 // MARK: PullToRefresh View
 // This is a default implementation that resembles the behavior of SVPullToRefresh. You can subclass or write your own implementation to meet your needs.
 //
@@ -65,6 +73,8 @@ public class DefaultPullToRefreshView: UIView, PullToRefreshView {
     //
     // MARK: State
     //
+    public var delegate: RefreshDelegate?
+    
     public var state: RefreshState = .stopped {
         willSet {
             //NOTE: Only update the layout if the state changes. This mitigates the risk of abnormal layout issues (like duplicated or stuttering animations).
@@ -74,10 +84,13 @@ public class DefaultPullToRefreshView: UIView, PullToRefreshView {
             switch newValue {
             case .stopped:
                 layoutStateStopped()
+                delegate?.didStop()
             case .committed:
                 layoutStateCommitted()
+                delegate?.didCommit()
             case .loading:
                 layoutStateLoading()
+                delegate?.didBeginLoading()
             }
         }
     }
