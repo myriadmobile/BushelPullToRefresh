@@ -75,13 +75,15 @@ public class DefaultPullToRefreshView: UIView, PullToRefreshView {
     //
     public var delegate: RefreshDelegate?
     
+    var lastSetState: RefreshState? //TODO: Is there a better way?
     public var state: RefreshState = .stopped {
-        willSet {
+        didSet {
             //NOTE: Only update the layout if the state changes. This mitigates the risk of abnormal layout issues (like duplicated or stuttering animations).
-            guard state != newValue else { return }
+            guard state != lastSetState else { return }
+            lastSetState = state
             
             //Update UI for the new state
-            switch newValue {
+            switch state {
             case .stopped:
                 layoutStateStopped()
                 delegate?.didStop()

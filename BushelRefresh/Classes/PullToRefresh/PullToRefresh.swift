@@ -136,6 +136,8 @@ public class PullToRefreshTopContainer: UIView, PullToRefreshContainer, RefreshD
     }
     
     public func didBeginLoading() {
+        refreshAction()
+        
         UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction], animations: {
             self.scrollView.contentInset.top = self.originalInset + self.frame.height
             self.scrollView.setContentOffset(CGPoint(x: 0, y: self.loadingThreshold), animated: true)
