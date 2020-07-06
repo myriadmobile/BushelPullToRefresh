@@ -7,25 +7,7 @@
 
 import UIKit
 
-//TODO: Shared
-extension Bundle {
-    
-    static func current() -> Bundle {
-        return Bundle(for: DefaultPullToRefreshView.self)
-    }
-    
-    static func resource() -> Bundle? {
-        guard let bundleURL = Bundle.current().resourceURL?.appendingPathComponent("BushelRefresh.bundle") else { return nil }
-        return Bundle(url: bundleURL)
-    }
-    
-}
-
-
-
-
-
-public protocol PullToRefresh: class {
+public protocol PullToRefresh {
     
     //View
     var pullToRefreshContainer: PullToRefreshContainer? { get }

@@ -20,8 +20,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         
-//        tableView.contentInset.top = 100
-        
         //PTR
         tableView.addPullToRefresh(action: {
             print("Fetching data!")
@@ -31,6 +29,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.tableView.reloadData()
             }
         })
+        tableView.contentInset.top = 100
+        
     }
     
     //Actions

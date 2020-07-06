@@ -21,6 +21,7 @@
 		82FC00EEF95387F737878F0B39B727D0 /* InfiniteScrolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19029DCF1996FFF7FAE7323A55D62DF3 /* InfiniteScrolling.swift */; };
 		9331B56D24AD211F002ACB87 /* UIScrollView+PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9331B56C24AD211F002ACB87 /* UIScrollView+PullToRefresh.swift */; };
 		9331B56F24AD3C81002ACB87 /* DefaultPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9331B56E24AD3C81002ACB87 /* DefaultPullToRefreshView.swift */; };
+		9360D4E024B382770003028A /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360D4DF24B382770003028A /* BundleExtensions.swift */; };
 		9FADD3620FBBF99BC914A81E78DC4997 /* Pods-BushelRefresh_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F6EA30319ACA6D7308DB3497B3B25B0 /* Pods-BushelRefresh_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDCEEF373614A5B2E6AF1ABC2162E5E4 /* Pods-BushelRefresh_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2DF050788FA52B70A8FC9E2339C081 /* Pods-BushelRefresh_Tests-dummy.m */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		850079CAD97876F1A4F8DF77D7E84EAF /* Pods-BushelRefresh_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BushelRefresh_Tests.modulemap"; sourceTree = "<group>"; };
 		9331B56C24AD211F002ACB87 /* UIScrollView+PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+PullToRefresh.swift"; sourceTree = "<group>"; };
 		9331B56E24AD3C81002ACB87 /* DefaultPullToRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPullToRefreshView.swift; sourceTree = "<group>"; };
+		9360D4DF24B382770003028A /* BundleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BundleExtensions.swift; path = BushelRefresh/Classes/BundleExtensions.swift; sourceTree = "<group>"; };
 		95F557B95E3E49C8D55D100DEC1A4DB7 /* BushelRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BushelRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EDB755C130150A21E9B82ED02C93681 /* Pods-BushelRefresh_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BushelRefresh_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		0603FC48A00566A1635CC2E90E75396E /* BushelRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				9360D4DF24B382770003028A /* BundleExtensions.swift */,
 				787FE0305C56750A2D6092BD0FD8FC4D /* InfiniteScrolling */,
 				01BB0230E3A649C371A4F178ED8A0925 /* Pod */,
 				0B7A58FF8FE8450F07991C513B25180C /* PullToRefresh */,
@@ -456,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9331B56F24AD3C81002ACB87 /* DefaultPullToRefreshView.swift in Sources */,
+				9360D4E024B382770003028A /* BundleExtensions.swift in Sources */,
 				9331B56D24AD211F002ACB87 /* UIScrollView+PullToRefresh.swift in Sources */,
 				19A44A8D65B68D128933A3406550243A /* BushelRefresh-dummy.m in Sources */,
 				64991EA7C7D5B7A68BC01B762051F858 /* DefaultPullToRefreshView.xib in Sources */,

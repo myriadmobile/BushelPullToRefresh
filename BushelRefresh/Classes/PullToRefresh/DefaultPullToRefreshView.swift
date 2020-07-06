@@ -62,6 +62,7 @@ public class DefaultPullToRefreshView: UIView, PullToRefreshView {
         let view = UINib(nibName: "DefaultPullToRefreshView", bundle: Bundle.current()).instantiate(withOwner: nil, options: nil)[0] as! DefaultPullToRefreshView
         
         //Style
+        view.backgroundColor = .clear
         view.label.textColor = .darkGray
         view.setArrowColor(.gray)
         view.arrowImageView.image = UIImage(named: "Arrow", in: Bundle.resource(), compatibleWith: nil)
@@ -75,7 +76,7 @@ public class DefaultPullToRefreshView: UIView, PullToRefreshView {
     //
     public var delegate: RefreshDelegate?
     
-    var lastSetState: RefreshState? //TODO: Is there a better way?
+    var lastSetState: RefreshState?
     public var state: RefreshState = .stopped {
         didSet {
             //NOTE: Only update the layout if the state changes. This mitigates the risk of abnormal layout issues (like duplicated or stuttering animations).
