@@ -29,8 +29,8 @@ public protocol PullToRefreshView: UIView {
     static func createView() -> PullToRefreshView
     
     //State
-    var state: RefreshState { get set } //Ideally we would use KVO instead of a delegate, but I ran into a string of issues while attempting to implement it.
     var delegate: RefreshDelegate? { get set }
+    var state: RefreshState { get set } //Ideally we would use KVO instead of a delegate, but I ran into a string of issues while attempting to implement it.
     
     //Actions
     func refreshLayout()

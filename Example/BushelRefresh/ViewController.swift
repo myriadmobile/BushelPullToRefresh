@@ -21,6 +21,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         
         //PTR
+        addPullToRefresh()
+    }
+    
+    func addPullToRefresh() {
         tableView.addPullToRefresh(action: {
             print("Fetching data!")
             
@@ -28,7 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.tableView.pullToRefreshView?.stopAnimating()
                 self.tableView.reloadData()
             }
-        })
+        }, viewType: CustomPTR.self)
     }
     
     //Actions
@@ -41,16 +45,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func toggleHidden(_ sender: Any) {
+        //TODO: This seems heavy handed. Being able to hide it would be ideal, but it makes dealing with insets and offsets quite confusing.
         if tableView.pullToRefreshView == nil {
-            //TODO: This seems heavy handed. Being able to hide it would be ideal, but it makes dealing with insets and offsets quite confusing.
-            tableView.addPullToRefresh(action: {
-                print("Fetching data!")
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.tableView.pullToRefreshView?.stopAnimating()
-                    self.tableView.reloadData()
-                }
-            })
+            addPullToRefresh()
         } else {
             tableView.removePullToRefresh()
         }
@@ -74,4 +71,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
 }
+
 
