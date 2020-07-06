@@ -7,22 +7,31 @@
 
 import UIKit
 
+//
+// MARK: PullToRefresh Protocol
+// This is a top level set of rules that scrollviews must implement. This extends the specifies how we are to interact with PullToRefresh.
+//
 public protocol PullToRefresh {
     
     //View
     var pullToRefreshContainer: PullToRefreshContainer? { get }
     var pullToRefreshView: PullToRefreshView? { get }
-    var showsPullToRefresh: Bool { get set }
     
-    //Actionsx
+    //Actions
     func addPullToRefresh(action: @escaping RefreshAction, containerType: PullToRefreshContainer.Type, viewType: PullToRefreshView.Type)
+    func removePullToRefresh()
     
 }
 
-//Primary layout and behavior
+//
+// MARK: ScrollView Implementation
+// This is the implementations that will apply to all scrollviews and their subtypes (ex: tableviews).
+//
 extension UIScrollView: PullToRefresh {
     
-    //State
+    //
+    // MARK: State
+    //
     public var pullToRefreshContainer: PullToRefreshContainer? {
         return self.subviews.compactMap({ $0 as? PullToRefreshContainer }).first
     }
@@ -31,19 +40,12 @@ extension UIScrollView: PullToRefresh {
         return self.pullToRefreshContainer?.refreshView
     }
     
-    public var showsPullToRefresh: Bool {
-        get {
-            return self.pullToRefreshContainer?.isHidden == false
-        }
-        set {
-            self.pullToRefreshContainer?.isHidden = !newValue
-        }
-    }
-    
-    //Actions
+    //
+    // MARK: Actions
+    //
     public func addPullToRefresh(action: @escaping RefreshAction, containerType: PullToRefreshContainer.Type = PullToRefreshTopContainer.self, viewType: PullToRefreshView.Type = DefaultPullToRefreshView.self) {
         //Remove existing PTR (if it exists)
-        self.pullToRefreshContainer?.removeFromSuperview()
+        removePullToRefresh()
 
         //Add our new PTR view
         let view = containerType.init(scrollView: self, refreshAction: action, viewType: viewType)
@@ -51,10 +53,14 @@ extension UIScrollView: PullToRefresh {
 
         //Setup the PTR state
         view.refreshAction = action
-        view.originalInset = self.contentInset.top //TODO: I'd love to remove these and determine the insets mathmatically
+        view.originalInset = self.contentInset.top
 
         //Add the constraints
         view.setupScrollViewConstraints()
+    }
+    
+    public func removePullToRefresh() {
+        self.pullToRefreshContainer?.removeFromSuperview()
     }
     
 }

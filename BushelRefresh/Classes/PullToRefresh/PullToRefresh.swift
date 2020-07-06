@@ -35,14 +35,11 @@ public class PullToRefreshTopContainer: UIView, PullToRefreshContainer, RefreshD
     public var scrollView: UIScrollView
     public var refreshView: PullToRefreshView
     public var refreshAction: RefreshAction
-    
-    lazy var verticalConstraint = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .lessThanOrEqual, toItem: scrollView, attribute: .top, multiplier: 1, constant: -self.originalInset)
     public var originalInset: CGFloat {
-       didSet {
-        verticalConstraint.constant = -self.originalInset
-       }
+        didSet { verticalConstraint.constant = -self.originalInset }
    }
     
+    lazy var verticalConstraint = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .lessThanOrEqual, toItem: scrollView, attribute: .top, multiplier: 1, constant: -self.originalInset)
     var contentOffsetObserver: NSKeyValueObservation?
     var contentInsetObserver: NSKeyValueObservation?
     
@@ -64,16 +61,10 @@ public class PullToRefreshTopContainer: UIView, PullToRefreshContainer, RefreshD
         super.init(frame: .zero)
         
         //Set up that is dependent on self
-        setupRefreshView()
-        setupObservers()
-        
-        //TODO: Review this
-        //Set default state; don't animate as we want it to be laid out properly as soon as it is added.
-        //This must be done AFTER the delegate is set so that we can capture the delegate callback
+        self.setupRefreshView()
+        self.setupObservers()
         self.refreshView.delegate = self
-        UIView.performWithoutAnimation {
-            self.refreshView.state = .stopped
-        }
+        self.refreshView.refreshLayout()
     }
     
     //
@@ -82,7 +73,6 @@ public class PullToRefreshTopContainer: UIView, PullToRefreshContainer, RefreshD
     public func setupScrollViewConstraints() {
         translatesAutoresizingMaskIntoConstraints = false
         
-        //TODO: Adjust the constraint when original inset changes
         //NOTE: We need to use a width constraint because a trailing constraint could be ambiguous
         let leadingConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: scrollView, attribute: .leading, multiplier: 1, constant: 0)
         let widthConstraint = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: scrollView, attribute: .width, multiplier: 1, constant: 0)
@@ -108,11 +98,9 @@ public class PullToRefreshTopContainer: UIView, PullToRefreshContainer, RefreshD
         
         contentInsetObserver = scrollView.observe(\.contentInset) { [weak self] (scrollView, change) in
             guard self?.isHidden == false else { return }
-            print(scrollView.contentInset.top)
             self?.originalInset = scrollView.contentInset.top
         }
     }
-    
     
     //
     // MARK: Scrolling Behavior
@@ -127,6 +115,7 @@ public class PullToRefreshTopContainer: UIView, PullToRefreshContainer, RefreshD
             break
         case .committed:
             if !scrollView.isDragging {
+                refreshAction()
                 refreshView.state = .loading
             }
             else if contentOffset.y >= loadingThreshold {
@@ -142,7 +131,6 @@ public class PullToRefreshTopContainer: UIView, PullToRefreshContainer, RefreshD
     //
     // MARK: Layout
     //
-    //TODO: Prevent adjustments when hidden
     public func didStop() {
         UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction], animations: {
              self.scrollView.contentInset.top = self.originalInset
@@ -156,19 +144,14 @@ public class PullToRefreshTopContainer: UIView, PullToRefreshContainer, RefreshD
     }
     
     public func didBeginLoading() {
-        refreshAction() //TODO: Only do this if it was performed manually?
-        
         UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction], animations: {
             let originalInset = self.originalInset
             self.scrollView.contentInset.top = originalInset + self.frame.height
             self.scrollView.setContentOffset(CGPoint(x: 0, y: -self.scrollView.contentInset.top), animated: true)
-            self.originalInset = originalInset //Prevents an issue where KVO will change the original inset to the LOADING inset value
+            self.originalInset = originalInset //Addresses an issue where KVO will change the original inset to the LOADING inset value
         })
-        
-        //        var offset: CGFloat
-        //        offset = CGFloat(max(scrollView.contentOffset.y * -1, 0.0))
-        //        offset = CGFloat(min(offset, originalInset + bounds.size.height))
-        //        scrollView.contentInset.top = offset
     }
     
 }
+
+//TODO: PullToRefreshBottomContainer

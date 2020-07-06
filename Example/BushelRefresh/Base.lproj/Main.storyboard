@@ -27,21 +27,28 @@
                                 <rect key="frame" x="8" y="629" width="359" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5x-E6-zsg">
-                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
                                         <state key="normal" title="Stop"/>
                                         <connections>
                                             <action selector="stop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OeL-Vu-87d"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeF-Iu-d4z">
-                                        <rect key="frame" x="119.5" y="0.0" width="120" height="30"/>
-                                        <state key="normal" title="Toggle Hidden"/>
+                                        <rect key="frame" x="90" y="0.0" width="89.5" height="30"/>
+                                        <state key="normal" title="Flip Hidden"/>
                                         <connections>
                                             <action selector="toggleHidden:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gFT-ai-6oq"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3q-pz-0iR">
+                                        <rect key="frame" x="179.5" y="0.0" width="90" height="30"/>
+                                        <state key="normal" title="New Inset"/>
+                                        <connections>
+                                            <action selector="newInset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Y1g-SP-oYW"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="day-hs-TH2">
-                                        <rect key="frame" x="239.5" y="0.0" width="119.5" height="30"/>
+                                        <rect key="frame" x="269.5" y="0.0" width="89.5" height="30"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <action selector="start:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oJP-Ft-a1G"/>

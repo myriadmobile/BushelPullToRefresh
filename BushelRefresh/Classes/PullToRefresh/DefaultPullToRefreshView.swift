@@ -29,16 +29,17 @@ public protocol PullToRefreshView: UIView {
     static func createView() -> PullToRefreshView
     
     //State
+    var state: RefreshState { get set } //Ideally we would use KVO instead of a delegate, but I ran into a string of issues while attempting to implement it.
     var delegate: RefreshDelegate? { get set }
-    var state: RefreshState { get set }
     
     //Actions
+    func refreshLayout()
     func startAnimating()
     func stopAnimating()
     
 }
 
-//r
+//
 // MARK: PullToRefresh View
 // This is a default implementation that resembles the behavior of SVPullToRefresh. You can subclass or write your own implementation to meet your needs.
 //
@@ -83,24 +84,28 @@ public class DefaultPullToRefreshView: UIView, PullToRefreshView {
             guard state != lastSetState else { return }
             lastSetState = state
             
-            //Update UI for the new state
-            switch state {
-            case .stopped:
-                layoutStateStopped()
-                delegate?.didStop()
-            case .committed:
-                layoutStateCommitted()
-                delegate?.didCommit()
-            case .loading:
-                layoutStateLoading()
-                delegate?.didBeginLoading()
-            }
+            refreshLayout()
         }
     }
     
     //
     // MARK: Layout
     //
+    public func refreshLayout() {
+        //Update UI for the new state
+        switch state {
+        case .stopped:
+            layoutStateStopped()
+            delegate?.didStop()
+        case .committed:
+            layoutStateCommitted()
+            delegate?.didCommit()
+        case .loading:
+            layoutStateLoading()
+            delegate?.didBeginLoading()
+        }
+    }
+    
     func layoutStateStopped() {
         //Text
         self.label.text = stoppedTitle
