@@ -18,7 +18,7 @@ public protocol PullToRefresh {
     var pullToRefreshView: PullToRefreshView? { get }
     
     //Actions
-    func addPullToRefresh(action: @escaping RefreshAction, containerType: PullToRefreshContainer.Type, viewType: PullToRefreshView.Type)
+    func addPullToRefresh(containerType: PullToRefreshContainer.Type, viewType: PullToRefreshView.Type, action: @escaping RefreshAction)
     func removePullToRefresh()
     
 }
@@ -43,7 +43,7 @@ extension UIScrollView: PullToRefresh {
     //
     // MARK: Actions
     //
-    public func addPullToRefresh(action: @escaping RefreshAction, containerType: PullToRefreshContainer.Type = PullToRefreshTopContainer.self, viewType: PullToRefreshView.Type = DefaultPullToRefreshView.self) {
+    public func addPullToRefresh(containerType: PullToRefreshContainer.Type = PullToRefreshTopContainer.self, viewType: PullToRefreshView.Type = DefaultPullToRefreshView.self, action: @escaping RefreshAction) {
         //Remove existing PTR (if it exists)
         removePullToRefresh()
 
