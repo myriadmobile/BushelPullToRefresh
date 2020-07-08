@@ -21,18 +21,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         
         //PTR
-        addPullToRefresh()
+        tableView.addPullToRefresh(containerType: PullToRefreshBottomContainer.self, viewType: CustomPTR.self, action: { [weak self] in
+            self?.getData()
+        })
     }
     
-    func addPullToRefresh() {
-        tableView.addPullToRefresh(action: {
-            print("Fetching data!")
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.tableView.pullToRefreshView?.stopAnimating()
-                self.tableView.reloadData()
-            }
-        }, viewType: CustomPTR.self)
+    func getData() {
+        print("Fetching data!")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.tableView.pullToRefreshView?.stopAnimating()
+            self.tableView.reloadData()
+        }
     }
     
     //Actions
@@ -45,18 +45,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func toggleHidden(_ sender: Any) {
-        //TODO: This seems heavy handed. Being able to hide it would be ideal, but it makes dealing with insets and offsets quite confusing.
-        if tableView.pullToRefreshView == nil {
-            addPullToRefresh()
-        } else {
-            tableView.removePullToRefresh()
-        }
+        tableView.showsPullToRefresh = !tableView.showsPullToRefresh
     }
     
     @IBAction func newInset(_ sender: Any) {
         let newInset = CGFloat(arc4random() % 100)
         print("New Inset: \(newInset)")
-        tableView.contentInset.top = newInset
+        tableView.contentInset.bottom = newInset
     }
     
     //TableView

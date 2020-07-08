@@ -16,6 +16,7 @@ public protocol PullToRefresh {
     //View
     var pullToRefreshContainer: PullToRefreshContainer? { get }
     var pullToRefreshView: PullToRefreshView? { get }
+    var showsPullToRefresh: Bool { get set }
     
     //Actions
     func addPullToRefresh(containerType: PullToRefreshContainer.Type, viewType: PullToRefreshView.Type, action: @escaping RefreshAction)
@@ -37,7 +38,17 @@ extension UIScrollView: PullToRefresh {
     }
     
     public var pullToRefreshView: PullToRefreshView? {
+        guard showsPullToRefresh else { return nil }
         return self.pullToRefreshContainer?.refreshView
+    }
+    
+    public var showsPullToRefresh: Bool {
+        get {
+            return pullToRefreshContainer?.isHidden == false
+        }
+        set {
+            pullToRefreshContainer?.isHidden = !newValue
+        }
     }
     
     //
@@ -50,10 +61,6 @@ extension UIScrollView: PullToRefresh {
         //Add our new PTR view
         let view = containerType.init(scrollView: self, refreshAction: action, viewType: viewType)
         self.addSubview(view)
-
-        //Setup the PTR state
-        view.refreshAction = action
-        view.originalInset = self.contentInset.top
 
         //Add the constraints
         view.setupScrollViewConstraints()
