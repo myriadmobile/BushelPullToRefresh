@@ -9,7 +9,7 @@
 import UIKit
 import BushelRefresh
 
-class CustomPTR: UIView, PullToRefreshView {
+class CustomPTR: UIView, RefreshView {
     
     //
     // MARK: UI
@@ -19,7 +19,7 @@ class CustomPTR: UIView, PullToRefreshView {
     //
     // MARK: Initialization
     //
-    static func createView() -> PullToRefreshView {
+    static func createView() -> RefreshView {
         let view = UINib(nibName: "CustomPTR", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! CustomPTR
         return view
     }

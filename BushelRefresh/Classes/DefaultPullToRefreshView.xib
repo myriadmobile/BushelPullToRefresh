@@ -19,16 +19,16 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="NXr-Pz-Pgg">
-                    <rect key="frame" x="174.5" y="78" width="20" height="20"/>
-                </activityIndicatorView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tru-Cf-Um4">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tru-Cf-Um4">
                     <rect key="frame" x="173.5" y="64" width="22" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="Iej-p8-Q7T"/>
                         <constraint firstAttribute="width" constant="22" id="K1J-Ko-2Mj"/>
                     </constraints>
                 </imageView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="NXr-Pz-Pgg">
+                    <rect key="frame" x="174.5" y="78" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -53,4 +53,7 @@
             <point key="canvasLocation" x="-107.24637681159422" y="-220.3125"/>
         </view>
     </objects>
+    <resources>
+        <image name="Arrow.png" width="5.2800002098083496" height="11.520000457763672"/>
+    </resources>
 </document>
