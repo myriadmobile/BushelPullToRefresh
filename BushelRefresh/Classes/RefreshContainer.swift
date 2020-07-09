@@ -99,8 +99,11 @@ public class RefreshTopContainer: UIView, RefreshContainer, RefreshDelegate {
             self?.scrollViewDidScroll(contentOffset: scrollView.contentOffset)
         }
         
-        contentInsetObserver = scrollView.observe(\.contentInset) { [weak self] (scrollView, change) in
+        contentInsetObserver = scrollView.observe(\.contentInset, options: [.new, .old]) { [weak self] (scrollView, change) in
             guard self?.isHidden == false else { return }
+            
+            //Required or other inset changes (e.g. bottom) will call this again and disrupt our original inset
+            guard change.newValue?.top != change.oldValue?.top else { return }
             self?.originalInset = scrollView.contentInset.top
         }
     }
@@ -125,11 +128,11 @@ public class RefreshTopContainer: UIView, RefreshContainer, RefreshDelegate {
                 refreshAction()
                 refreshView.state = .loading
             }
-            else if contentOffset.y + verticalConstraint.constant >= -loadingThreshold {
+            else if contentOffset.y - verticalConstraint.constant >= -loadingThreshold {
                 refreshView.state = .stopped
             }
         case .stopped:
-            if contentOffset.y + verticalConstraint.constant < -loadingThreshold && scrollView.isDragging {
+            if contentOffset.y - verticalConstraint.constant < -loadingThreshold && scrollView.isDragging {
                 refreshView.state = .committed
             }
         }
@@ -165,7 +168,7 @@ public class RefreshTopContainer: UIView, RefreshContainer, RefreshDelegate {
     
 }
 //TODO: Consider using bounds; it might be safer
-//TODO: We want this to be AT LEAST at the bottom of the view; there is a min vertical constraint
+
 public class RefreshBottomContainer: UIView, RefreshContainer, RefreshDelegate {
 
     //Required State
@@ -236,8 +239,11 @@ public class RefreshBottomContainer: UIView, RefreshContainer, RefreshDelegate {
             self?.scrollViewDidScroll(contentOffset: scrollView.contentOffset)
         }
 
-        contentInsetObserver = scrollView.observe(\.contentInset) { [weak self] (scrollView, change) in
+        contentInsetObserver = scrollView.observe(\.contentInset, options: [.new, .old]) { [weak self] (scrollView, change) in
             guard self?.isHidden == false else { return }
+            
+            //Required or other inset changes (e.g. bottom) will call this again and disrupt our original inset
+            guard change.newValue?.bottom != change.oldValue?.bottom else { return }
             self?.originalInset = scrollView.contentInset.bottom
         }
 

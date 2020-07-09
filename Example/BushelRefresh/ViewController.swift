@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         
         //PTR
-        tableView.addRefresh(id: "pulltorefresh", containerType: RefreshTopContainer.self, viewType: CustomPTR.self) { [weak self] in
+        tableView.addRefresh(id: "pulltorefresh", containerType: RefreshTopContainer.self, viewType: DefaultPullToRefreshView.self) { [weak self] in
             print("Refreshing data!")
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -31,14 +31,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         //IL
-//        tableView.addRefresh(id: "infiniteloading", containerType: RefreshBottomContainer.self, viewType: CustomPTR.self) { [weak self] in
-//            print("Loading more!")
-//
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//                self?.tableView.refreshView(for: "infiniteloading")?.stopAnimating()
-//                self?.tableView.reloadData()
-//            }
-//        }
+        tableView.addRefresh(id: "infiniteloading", containerType: RefreshBottomContainer.self, viewType: DefaultInfiniteLoadingView.self) { [weak self] in
+            print("Loading more!")
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self?.tableView.refreshView(for: "infiniteloading")?.stopAnimating()
+                self?.tableView.reloadData()
+            }
+        }
     }
     
     //Actions
