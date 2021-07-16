@@ -57,21 +57,22 @@ class ViewController: UIViewController {
     }
     
     // MARK: Button Actions
-    // TODO: Separate start and stop functions
-    @IBAction func stop(_ sender: Any) {
-        //NOTE: Order will matter in this case; the last called item will probably take priority
-        //This is likely an unrealistic use case
+    @IBAction func stopPullToRefresh(_ sender: Any) {
         tableView.pullToRefreshView?.stopAnimating()
+    }
+    
+    @IBAction func startPullToRefresh(_ sender: Any) {
+        tableView.pullToRefreshView?.startAnimating()
+    }
+    
+    @IBAction func stopInfiniteScrolling(_ sender: Any) {
         tableView.infiniteScrollingView?.stopAnimating()
     }
     
-    @IBAction func start(_ sender: Any) {
-        //NOTE: Order will matter in this case; the last called item will probably take priority
-        //This is likely an unrealistic use case
-        tableView.pullToRefreshView?.startAnimating()
+    @IBAction func startInfiniteScrolling(_ sender: Any) {
         tableView.infiniteScrollingView?.startAnimating()
     }
-    
+
     @IBAction func toggleHidden(_ sender: Any) {
         tableView.pullToRefreshContainer?.isHidden = !isPullToRefreshHidden()
         tableView.infiniteScrollingContainer?.isHidden = !isInfiniteScrollingHidden()
