@@ -26,7 +26,6 @@ public protocol Refresh {
 }
 
 extension UIScrollView: Refresh {
-
     
     private static let PullToRefreshId = "PullToRefreshId"
     private static let InfiniteScrollingId = "InfiniteScrollingId"
@@ -46,6 +45,16 @@ extension UIScrollView: Refresh {
     
     public var infiniteScrollingContainer: RefreshContainer? {
         return refreshContainer(for: UIScrollView.InfiniteScrollingId)
+    }
+    
+    private func refreshView(for id: String) -> RefreshView? {
+        let container = refreshContainer(for: id)
+        return container?.refreshView
+    }
+    
+    private func refreshContainer(for id: String) -> RefreshContainer? {
+        let containers = self.subviews.compactMap({ $0 as? RefreshContainer })
+        return containers.first(where: { $0.id == id })
     }
     
     // MARK: Add
@@ -71,6 +80,28 @@ extension UIScrollView: Refresh {
                    action: action)
     }
     
+    private func setRefresh(id: String, containerType: RefreshContainer.Type, viewType: RefreshView.Type, action: @escaping RefreshAction) {
+        removeRefreshContainer(for: id)
+        addRefreshContainer(with: id, containerType: containerType, viewType: viewType, action: action)
+        addRefreshContainerConstraints(to: id)
+    }
+    
+    private func addRefreshContainer(with id: String, containerType: RefreshContainer.Type, viewType: RefreshView.Type, action: @escaping RefreshAction) {
+        let view = containerType.init(id: id, scrollView: self, refreshAction: action, viewType: viewType)
+        self.addSubview(view)
+    }
+    
+    private func addRefreshContainerConstraints(to id: String) {
+        guard let container = refreshContainer(for: id) else { return }
+        
+        container.translatesAutoresizingMaskIntoConstraints = false
+        
+        let leadingConstraint = NSLayoutConstraint(item: container, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: container, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0)
+        addConstraints([leadingConstraint, widthConstraint])
+        container.addVerticalConstraint()
+    }
+    
     // MARK: Remove
     public func removePullToRefresh() {
         removeRefreshContainer(for: UIScrollView.PullToRefreshId)
@@ -80,36 +111,9 @@ extension UIScrollView: Refresh {
         removeRefreshContainer(for: UIScrollView.InfiniteScrollingId)
     }
     
-    // MARK: Helpers
-    private func refreshView(for id: String) -> RefreshView? {
-        let container = refreshContainer(for: id)
-        return container?.refreshView
-    }
-    
-    private func refreshContainer(for id: String) -> RefreshContainer? {
-        let containers = self.subviews.compactMap({ $0 as? RefreshContainer })
-        return containers.first(where: { $0.id == id })
-    }
-    
-    private func setRefresh(id: String, containerType: RefreshContainer.Type, viewType: RefreshView.Type, action: @escaping RefreshAction) {
-        removeRefreshContainer(for: id)
-        addRefreshContainer(with: id, containerType: containerType, viewType: viewType, action: action)
-        setupConstraintsForRefreshContainer(with: id)
-    }
-    
     private func removeRefreshContainer(for id: String) {
         let container = refreshContainer(for: id)
         container?.removeFromSuperview()
     }
-    
-    private func addRefreshContainer(with id: String, containerType: RefreshContainer.Type, viewType: RefreshView.Type, action: @escaping RefreshAction) {
-        let view = containerType.init(id: id, scrollView: self, refreshAction: action, viewType: viewType)
-        self.addSubview(view)
-    }
-    
-    private func setupConstraintsForRefreshContainer(with id: String) {
-        let container = refreshContainer(for: id)
-        container?.setupScrollViewConstraints()
-    }
-    
+        
 }

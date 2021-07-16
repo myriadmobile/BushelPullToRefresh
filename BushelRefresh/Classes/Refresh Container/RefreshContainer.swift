@@ -14,6 +14,6 @@ public protocol RefreshContainer: UIView {
     var scrollView: UIScrollView { get set }
     var refreshView: RefreshView { get set }
     var refreshAction: RefreshAction { get set }
-    func setupScrollViewConstraints()
+    func addVerticalConstraint()
     init(id: String, scrollView: UIScrollView, refreshAction: @escaping RefreshAction, viewType: RefreshView.Type) // TODO:
 }
