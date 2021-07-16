@@ -60,14 +60,14 @@ public class DefaultPullToRefreshView: UIView, RefreshView {
     // MARK: Initialization
     //
     public static func createView() -> RefreshView {
-        let view = UINib(nibName: "DefaultPullToRefreshView", bundle: Bundle.current()).instantiate(withOwner: nil, options: nil)[0] as! DefaultPullToRefreshView
+        let view = UINib(nibName: "DefaultPullToRefreshView", bundle: .bushelRefresh).instantiate(withOwner: nil, options: nil)[0] as! DefaultPullToRefreshView
 
         //Style
         view.backgroundColor = .clear
         view.label.textColor = .darkGray
-        view.arrowImageView.image = UIImage(named: "Arrow", in: Bundle.resource(), compatibleWith: nil)
+        view.arrowImageView.image = UIImage(named: "Arrow", in: .resources, compatibleWith: nil)
         view.setArrowColor(.gray)
-        view.activityIndicator.activityIndicatorViewStyle = .gray
+        view.activityIndicator.style = .gray
 
         return view
     }
@@ -190,11 +190,11 @@ public class DefaultInfiniteLoadingView: UIView, RefreshView {
     // MARK: Initialization
     //
     public static func createView() -> RefreshView {
-        let view = UINib(nibName: "DefaultInfiniteLoadingView", bundle: Bundle.current()).instantiate(withOwner: nil, options: nil)[0] as! DefaultInfiniteLoadingView
+        let view = UINib(nibName: "DefaultInfiniteLoadingView", bundle: .bushelRefresh).instantiate(withOwner: nil, options: nil)[0] as! DefaultInfiniteLoadingView
 
         //Style
 //        view.backgroundColor = .clear
-        view.activityIndicator.activityIndicatorViewStyle = .gray
+        view.activityIndicator.style = .gray
 
         return view
     }

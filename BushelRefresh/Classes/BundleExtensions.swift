@@ -7,13 +7,13 @@
 
 extension Bundle {
     
-    static func current() -> Bundle {
+    static let bushelRefresh: Bundle = {
         return Bundle(for: DefaultPullToRefreshView.self)
-    }
+    }()
     
-    static func resource() -> Bundle? {
-        guard let bundleURL = Bundle.current().resourceURL?.appendingPathComponent("BushelRefresh.bundle") else { return nil }
+    static let resources: Bundle? = {
+        guard let bundleURL = Bundle.bushelRefresh.resourceURL?.appendingPathComponent("BushelRefresh.bundle") else { return nil }
         return Bundle(url: bundleURL)
-    }
+    }()
     
 }

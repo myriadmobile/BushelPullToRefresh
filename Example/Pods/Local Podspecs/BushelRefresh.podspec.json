@@ -1,9 +1,8 @@
 {
   "name": "BushelRefresh",
-  "version": "0.1.0",
-  "summary": "A short description of BushelRefresh.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Alex Larson/BushelRefresh",
+  "version": "1.0.0",
+  "summary": "An iOS Pull-To-Refresh and Infinite Scrolling library.",
+  "homepage": "https://github.com/myriadmobile/BushelRefresh",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -13,15 +12,18 @@
   },
   "source": {
     "git": "https://github.com/Alex Larson/BushelRefresh.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
+  "description": "BushelRefresh is an iOS Pull-To-Refresh and InfiniteScrolling library based on SVPullToRefresh. It has been rewritten in Swift and aims to address bugs we experienced with the original.",
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "BushelRefresh/Classes/**/*",
+  "swift_versions": "5.3",
+  "source_files": "BushelRefresh/**/*",
   "resource_bundles": {
     "BushelRefresh": [
-      "BushelRefresh/Assets/*.png"
+      "BushelRefresh/**/*.{xib,storyboard,png,jpeg,jpg,txt,ttf,xcassets,json}"
     ]
-  }
+  },
+  "swift_version": "5.3"
 }

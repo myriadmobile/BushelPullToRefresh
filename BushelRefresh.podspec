@@ -7,36 +7,24 @@
 #
 
 Pod::Spec.new do |s|
+  # Pod Information
   s.name             = 'BushelRefresh'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of BushelRefresh.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/Alex Larson/BushelRefresh'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.version          = '1.0.0'
+  s.summary          = 'An iOS Pull-To-Refresh and Infinite Scrolling library.'
+  s.homepage         = 'https://github.com/myriadmobile/BushelRefresh'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Alex Larson' => 'alarson@bushelpowered.com' }
   s.source           = { :git => 'https://github.com/Alex Larson/BushelRefresh.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.description      = <<-DESC
+  BushelRefresh is an iOS Pull-To-Refresh and InfiniteScrolling library based on SVPullToRefresh. It has been rewritten in Swift and aims to address bugs we experienced with the original.
+                       DESC
 
+  # Configuration
   s.ios.deployment_target = '10.0'
+  s.swift_version = '5.3'
 
-  s.source_files = 'BushelRefresh/Classes/**/*'
-  
-  s.resource_bundles = {
-    'BushelRefresh' => ['BushelRefresh/Assets/*.png']
-  }
+  # Source
+  s.source_files = 'BushelRefresh/**/*'
+  s.resource_bundle =  { 'BushelRefresh' => ['BushelRefresh/**/*.{xib,storyboard,png,jpeg,jpg,txt,ttf,xcassets,json}'] }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
