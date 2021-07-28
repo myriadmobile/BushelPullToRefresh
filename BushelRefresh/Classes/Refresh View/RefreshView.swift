@@ -20,10 +20,9 @@ public protocol RefreshDelegate {
 }
 
 public protocol RefreshView: UIView {
-    static func createView() -> RefreshView
     var delegate: RefreshDelegate? { get set }
     var state: RefreshState { get set } // Ideally we would use KVO instead of a delegate, but I ran into issues while attempting to implement it.
-    func refreshLayout()
+    func refreshWithCurrentState()
     func startAnimating()
     func stopAnimating()
 }

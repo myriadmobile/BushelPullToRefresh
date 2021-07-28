@@ -17,8 +17,8 @@ public protocol Refresh {
     // Add
     func addPullToRefresh(action: @escaping RefreshAction)
     func addInfiniteScrolling(action: @escaping RefreshAction)
-    func addPullToRefresh(type: RefreshView.Type, action: @escaping RefreshAction)
-    func addInfiniteScrolling(type: RefreshView.Type, action: @escaping RefreshAction)
+    func addPullToRefresh(refreshView: RefreshView, action: @escaping RefreshAction)
+    func addInfiniteScrolling(refreshView: RefreshView, action: @escaping RefreshAction)
     
     // Remove
     func removePullToRefresh()
@@ -32,11 +32,11 @@ extension UIScrollView: Refresh {
     
     // MARK: Accessors
     public var pullToRefreshView: RefreshView? {
-        return refreshView(for: UIScrollView.PullToRefreshId)
+        return pullToRefreshContainer?.refreshView
     }
     
     public var infiniteScrollingView: RefreshView? {
-        return refreshView(for: UIScrollView.InfiniteScrollingId)
+        return infiniteScrollingContainer?.refreshView
     }
     
     public var pullToRefreshContainer: RefreshContainer? {
@@ -47,11 +47,6 @@ extension UIScrollView: Refresh {
         return refreshContainer(for: UIScrollView.InfiniteScrollingId)
     }
     
-    private func refreshView(for id: String) -> RefreshView? {
-        let container = refreshContainer(for: id)
-        return container?.refreshView
-    }
-    
     private func refreshContainer(for id: String) -> RefreshContainer? {
         let containers = self.subviews.compactMap({ $0 as? RefreshContainer })
         return containers.first(where: { $0.id == id })
@@ -59,47 +54,43 @@ extension UIScrollView: Refresh {
     
     // MARK: Add
     public func addPullToRefresh(action: @escaping RefreshAction) {
-        addPullToRefresh(type: DefaultPullToRefreshView.self, action: action)
+        let refreshView = DefaultPullToRefreshView.createView()
+        addPullToRefresh(refreshView: refreshView, action: action)
     }
     
-    public func addPullToRefresh(type: RefreshView.Type, action: @escaping RefreshAction) {
-        setRefresh(id: UIScrollView.PullToRefreshId,
-                   containerType: TopRefreshContainer.self,
-                   viewType: type,
-                   action: action)
+    public func addPullToRefresh(refreshView: RefreshView, action: @escaping RefreshAction) {
+        let container = createPullToRefreshContainer(refreshView: refreshView, action: action)
+        setRefresh(container: container)
+    }
+    
+    private func createPullToRefreshContainer(refreshView: RefreshView, action: @escaping RefreshAction) -> TopRefreshContainer {
+        return TopRefreshContainer(id: UIScrollView.PullToRefreshId,
+                                   scrollView: self,
+                                   refreshAction: action,
+                                   refreshView: refreshView)
     }
     
     public func addInfiniteScrolling(action: @escaping RefreshAction) {
-        addInfiniteScrolling(type: DefaultInfiniteLoadingView.self, action: action)
+        let refreshView = DefaultInfiniteLoadingView.createView()
+        addInfiniteScrolling(refreshView: refreshView, action: action)
     }
-    
-    public func addInfiniteScrolling(type: RefreshView.Type, action: @escaping RefreshAction) {
-        setRefresh(id: UIScrollView.InfiniteScrollingId,
-                   containerType: BottomRefreshContainer.self,
-                   viewType: type,
-                   action: action)
-    }
-    
-    private func setRefresh(id: String, containerType: RefreshContainer.Type, viewType: RefreshView.Type, action: @escaping RefreshAction) {
-        removeRefreshContainer(for: id)
-        addRefreshContainer(with: id, containerType: containerType, viewType: viewType, action: action)
-        addRefreshContainerConstraints(to: id)
-    }
-    
-    private func addRefreshContainer(with id: String, containerType: RefreshContainer.Type, viewType: RefreshView.Type, action: @escaping RefreshAction) {
-        let view = containerType.init(id: id, scrollView: self, refreshAction: action, viewType: viewType)
-        self.addSubview(view)
-    }
-    
-    private func addRefreshContainerConstraints(to id: String) {
-        guard let container = refreshContainer(for: id) else { return }
         
-        container.translatesAutoresizingMaskIntoConstraints = false
-        
-        let leadingConstraint = NSLayoutConstraint(item: container, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
-        let widthConstraint = NSLayoutConstraint(item: container, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0)
-        addConstraints([leadingConstraint, widthConstraint])
-        container.addVerticalConstraint()
+    public func addInfiniteScrolling(refreshView: RefreshView, action: @escaping RefreshAction) {
+        let container = createInfiniteScrollingContainer(refreshView: refreshView, action: action)
+        setRefresh(container: container)
+    }
+    
+    private func createInfiniteScrollingContainer(refreshView: RefreshView, action: @escaping RefreshAction) -> BottomRefreshContainer {
+        return BottomRefreshContainer(id: UIScrollView.InfiniteScrollingId,
+                                      scrollView: self,
+                                      refreshAction: action,
+                                      refreshView: refreshView)
+    }
+    
+    private func setRefresh(container: RefreshContainer) {
+        removeRefreshContainer(for: container.id)
+        addSubview(container)
+        container.addConstraints()
     }
     
     // MARK: Remove

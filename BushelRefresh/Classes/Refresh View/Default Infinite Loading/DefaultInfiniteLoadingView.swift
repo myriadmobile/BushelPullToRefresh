@@ -21,7 +21,7 @@ public class DefaultInfiniteLoadingView: UIView, RefreshView {
             // Only update the layout if the state changes. This mitigates the risk of abnormal layout issues (like duplicated or stuttering animations).
             guard state != lastSetState else { return }
             lastSetState = state
-            refreshLayout()
+            refreshWithCurrentState()
         }
     }
 
@@ -50,7 +50,7 @@ public class DefaultInfiniteLoadingView: UIView, RefreshView {
     }
 
     // MARK: Layout
-    public func refreshLayout() {
+    public func refreshWithCurrentState() {
         switch state {
         case .stopped:
             handleStoppedState()

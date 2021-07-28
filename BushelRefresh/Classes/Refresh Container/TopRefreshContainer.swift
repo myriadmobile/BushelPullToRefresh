@@ -23,10 +23,10 @@ public class TopRefreshContainer: UIView, RefreshContainer {
         fatalError("init(coder:) has not been implemented")
     }
     
-    required public init(id: String, scrollView: UIScrollView, refreshAction: @escaping RefreshAction, viewType: RefreshView.Type) {
+    required public init(id: String, scrollView: UIScrollView, refreshAction: @escaping RefreshAction, refreshView: RefreshView) {
         self.id = id
         self.scrollView = scrollView
-        self.refreshView = viewType.createView()
+        self.refreshView = refreshView
         self.refreshAction = refreshAction
         self.originalInset = scrollView.contentInset.top
         
@@ -60,7 +60,7 @@ public class TopRefreshContainer: UIView, RefreshContainer {
         addRefreshViewToContainer()
         addRefreshViewConstraints()
         refreshView.delegate = self
-        refreshView.refreshLayout()
+        refreshView.refreshWithCurrentState()
     }
     
     private func addRefreshViewToContainer() {
@@ -79,8 +79,12 @@ public class TopRefreshContainer: UIView, RefreshContainer {
     }
     
     // MARK: Vertical Constraint
-    public func addVerticalConstraint() {
-        scrollView.addConstraints([verticalConstraint])
+    public func addConstraints() {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        let leadingConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: scrollView, attribute: .leading, multiplier: 1, constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: scrollView, attribute: .width, multiplier: 1, constant: 0)
+        scrollView.addConstraints([leadingConstraint, widthConstraint, verticalConstraint])
     }
     
     private func updateVerticalConstraint() {

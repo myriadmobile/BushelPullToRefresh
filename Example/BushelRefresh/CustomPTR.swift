@@ -31,14 +31,14 @@ class CustomPTR: UIView, RefreshView {
     
     public var state: RefreshState = .stopped {
         didSet {
-            refreshLayout()
+            refreshWithCurrentState()
         }
     }
     
     //
     // MARK: Layout
     //
-    func refreshLayout() {
+    func refreshWithCurrentState() {
         switch state {
         case .stopped:
             label.text = "Stopped"
