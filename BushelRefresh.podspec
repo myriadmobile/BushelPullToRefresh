@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/myriadmobile/BushelRefresh'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Alex Larson' => 'alarson@bushelpowered.com' }
-  s.source           = { :git => 'https://github.com/Alex Larson/BushelRefresh.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/myriadmobile/BushelRefresh.git', :tag => s.version.to_s }
   s.description      = <<-DESC
   BushelRefresh is an iOS Pull-To-Refresh and InfiniteScrolling library based on SVPullToRefresh. It has been rewritten in Swift and aims to address bugs we experienced with the original.
                        DESC
