@@ -3,9 +3,4 @@ use_frameworks!
 
 target 'BushelRefresh_Example' do
   pod 'BushelRefresh', :path => '../'
-
-  target 'BushelRefresh_Tests' do
-    inherit! :search_paths
-  end
-  
 end

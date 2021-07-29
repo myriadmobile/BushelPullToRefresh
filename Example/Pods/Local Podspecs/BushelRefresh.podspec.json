@@ -11,7 +11,7 @@
     "Alex Larson": "alarson@bushelpowered.com"
   },
   "source": {
-    "git": "https://github.com/Alex Larson/BushelRefresh.git",
+    "git": "https://github.com/myriadmobile/BushelRefresh.git",
     "tag": "1.0.0"
   },
   "description": "BushelRefresh is an iOS Pull-To-Refresh and InfiniteScrolling library based on SVPullToRefresh. It has been rewritten in Swift and aims to address bugs we experienced with the original.",
