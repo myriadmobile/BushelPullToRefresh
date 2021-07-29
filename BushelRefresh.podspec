@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5.3'
 
   # Source
-  s.source_files = 'BushelRefresh/**/*'
-  s.resource_bundle =  { 'BushelRefresh' => ['BushelRefresh/**/*.{xib,storyboard,png,jpeg,jpg,txt,ttf,xcassets,json}'] }
+  s.source_files = 'BushelRefresh/Classes/**/*'
+  s.resource_bundle =  { 'BushelRefresh' => ['BushelRefresh/Assets/**/*.{xib,storyboard,png,jpeg,jpg,txt,ttf,xcassets,json}'] }
 
 end
