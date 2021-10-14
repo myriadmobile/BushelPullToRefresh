@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   # Pod Information
   s.name             = 'BushelRefresh'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'An iOS Pull-To-Refresh and Infinite Scrolling library.'
   s.homepage         = 'https://github.com/myriadmobile/BushelRefresh'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
