@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06085853F8BDB5B2CEB02DA0CF003273 /* RefreshContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0E98E741399FCDD2C86D92BD00728D /* RefreshContainer.swift */; };
-		08971F7A291B6C317BBF662F2710CF5C /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A018D7705F1F4F97EFB4EAA0D7F09F /* Arrow.png */; };
-		0CC6FDE1C82292C8A12826F1B96B58DB /* BottomRefreshContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE16D48D0836FAA82AA9ECD779CB824 /* BottomRefreshContainer.swift */; };
-		0E84C612FAC2BFF815AECBC89AFE842A /* BushelRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E50D3E4D53265C117795282CA16B2FE1 /* BushelRefresh-dummy.m */; };
-		1B2B945B2395834C487110E4D5C87F2E /* TopRefreshContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05201A713F97E79EFA3474575C232B2E /* TopRefreshContainer.swift */; };
-		2E7E7FED1E5905BEBDAE944AF16F54D6 /* DefaultPullToRefreshView.xib in Sources */ = {isa = PBXBuildFile; fileRef = B4C247D26FBDF6E5C0D218F38CA291EC /* DefaultPullToRefreshView.xib */; };
+		06085853F8BDB5B2CEB02DA0CF003273 /* RefreshContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551EC9B5C829B09EB1E6F075D33F110F /* RefreshContainer.swift */; };
+		0CC6FDE1C82292C8A12826F1B96B58DB /* BottomRefreshContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342002A90C8CAC87D03EAA500A1D3628 /* BottomRefreshContainer.swift */; };
+		0E84C612FAC2BFF815AECBC89AFE842A /* BushelRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB0B98305D7549FDD8FA47BF5B1711A /* BushelRefresh-dummy.m */; };
+		1B2B945B2395834C487110E4D5C87F2E /* TopRefreshContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440669F8400BCAB81C2ED0CD77C31795 /* TopRefreshContainer.swift */; };
+		2E7E7FED1E5905BEBDAE944AF16F54D6 /* DefaultPullToRefreshView.xib in Sources */ = {isa = PBXBuildFile; fileRef = A242853A352881E7CFE595D15E5F3B96 /* DefaultPullToRefreshView.xib */; };
 		2F72BA9877ECC95C221FEA7BFEF69614 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		41D61EE782C0ACBA215E71069941BA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		51E7AFC8E84FAE933AC1E492D180BA76 /* Pods-BushelRefresh_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3777DB67C40451CF826976A4AE82BF83 /* Pods-BushelRefresh_Example-dummy.m */; };
-		76E20AF3248EF818BB93A5D50ED8C78A /* DefaultPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD1F61EBC1408A363189982D8FD0400 /* DefaultPullToRefreshView.swift */; };
-		867DCF58EA35A8FD026A406610CCBBB8 /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0D3E15344D00D371ABF12A4406041F /* UIScrollView+Refresh.swift */; };
-		87C2EC3F8BDC7FF5498027BE4CBDD56E /* DefaultInfiniteLoadingView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 05F7BB2C11B14148BFAAC71536E272CD /* DefaultInfiniteLoadingView.xib */; };
-		B0E26D9ACBA658C5525374B9188C4D1D /* BushelRefresh-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D89105CD67908A01E77CE472FBB4E01 /* BushelRefresh-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B29987D1C25851C7450BF72F952C2299 /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523A6BB300C4F557DA6D665B004610F /* RefreshView.swift */; };
-		D7F5C60B5B6217AD54E24A74D288EA42 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2C9E5A5EEE8E53E6981ED47C9E6A3 /* BundleExtensions.swift */; };
+		76E20AF3248EF818BB93A5D50ED8C78A /* DefaultPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718CD4EAE9A7D6089762453EEA65462B /* DefaultPullToRefreshView.swift */; };
+		867DCF58EA35A8FD026A406610CCBBB8 /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE956EC6E84752AEA7E5EB4E893344 /* UIScrollView+Refresh.swift */; };
+		87C2EC3F8BDC7FF5498027BE4CBDD56E /* DefaultInfiniteLoadingView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 841E83E5787F26D2E0A2EB8A06E5321D /* DefaultInfiniteLoadingView.xib */; };
+		B0E26D9ACBA658C5525374B9188C4D1D /* BushelRefresh-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A22C83A4DC6BE851293FB78BB1EF9E94 /* BushelRefresh-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B29987D1C25851C7450BF72F952C2299 /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82739C98F364B2DB37E8A65AE9ADD03A /* RefreshView.swift */; };
+		D7F5C60B5B6217AD54E24A74D288EA42 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68391CE389C21F7C229423486FF12135 /* BundleExtensions.swift */; };
 		DA711781D8E68A9C3C7D1469E3683E60 /* Pods-BushelRefresh_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 368420EC3416CEBCFFA066864EA7D029 /* Pods-BushelRefresh_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E72E72F58AAC572F08C97FCF56D42A2C /* BushelRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6F802EF0CDAB6CD7C0F4EDF6712AEF79 /* BushelRefresh.bundle */; };
-		E96CD3D1C61588177F30387EA9734B1E /* DefaultInfiniteLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702D1A1D4375C6776415AF9747F98605 /* DefaultInfiniteLoadingView.swift */; };
+		E96CD3D1C61588177F30387EA9734B1E /* DefaultInfiniteLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14A76FDC18C0955D3974F5C4F781AB /* DefaultInfiniteLoadingView.swift */; };
+		EFD5633F1E8F8E833583C0C124048D82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B7D5CFBC645526CD3FEF57D77868746 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,42 +45,42 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05201A713F97E79EFA3474575C232B2E /* TopRefreshContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TopRefreshContainer.swift; sourceTree = "<group>"; };
-		05F7BB2C11B14148BFAAC71536E272CD /* DefaultInfiniteLoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = DefaultInfiniteLoadingView.xib; sourceTree = "<group>"; };
 		0626979E2C69F7D546EAF0CA269AB5B4 /* Pods-BushelRefresh_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BushelRefresh_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		07A018D7705F1F4F97EFB4EAA0D7F09F /* Arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Arrow.png; path = BushelRefresh/Assets/Arrow.png; sourceTree = "<group>"; };
-		0E0E98E741399FCDD2C86D92BD00728D /* RefreshContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RefreshContainer.swift; sourceTree = "<group>"; };
 		138BF4DC720ABB8816F473D2F4462CE0 /* Pods-BushelRefresh_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BushelRefresh_Example.release.xcconfig"; sourceTree = "<group>"; };
-		14EEA4951721E73A9E769591FD33EAFB /* BushelRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BushelRefresh-Info.plist"; sourceTree = "<group>"; };
-		18C15A6242FDD09FDEA4E28D51BC2E15 /* BushelRefresh.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BushelRefresh.modulemap; sourceTree = "<group>"; };
 		1A5CB606DE747255D88FCFEF0418046B /* Pods-BushelRefresh_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BushelRefresh_Example.modulemap"; sourceTree = "<group>"; };
-		3523A6BB300C4F557DA6D665B004610F /* RefreshView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
+		342002A90C8CAC87D03EAA500A1D3628 /* BottomRefreshContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BottomRefreshContainer.swift; sourceTree = "<group>"; };
 		368420EC3416CEBCFFA066864EA7D029 /* Pods-BushelRefresh_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BushelRefresh_Example-umbrella.h"; sourceTree = "<group>"; };
 		3777DB67C40451CF826976A4AE82BF83 /* Pods-BushelRefresh_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BushelRefresh_Example-dummy.m"; sourceTree = "<group>"; };
-		3FC5CB261781EF63ED58B1DF4FE60E75 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		416E917CC0682449DE39C80093C7916E /* BushelRefresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BushelRefresh.release.xcconfig; sourceTree = "<group>"; };
-		439EA0B32EF420BF7057622ECCFBB7BA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		4D89105CD67908A01E77CE472FBB4E01 /* BushelRefresh-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BushelRefresh-umbrella.h"; sourceTree = "<group>"; };
-		4DA2C9E5A5EEE8E53E6981ED47C9E6A3 /* BundleExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BundleExtensions.swift; path = BushelRefresh/Classes/BundleExtensions.swift; sourceTree = "<group>"; };
-		5FD1F61EBC1408A363189982D8FD0400 /* DefaultPullToRefreshView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultPullToRefreshView.swift; sourceTree = "<group>"; };
-		604126B0CC7DBA431E87BD9320C85B28 /* BushelRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BushelRefresh-prefix.pch"; sourceTree = "<group>"; };
+		388ED8D9708BC372798A09B98DDE347A /* BushelRefresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BushelRefresh.release.xcconfig; sourceTree = "<group>"; };
+		440669F8400BCAB81C2ED0CD77C31795 /* TopRefreshContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TopRefreshContainer.swift; sourceTree = "<group>"; };
+		4B7D5CFBC645526CD3FEF57D77868746 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = BushelRefresh/Assets/Assets.xcassets; sourceTree = "<group>"; };
+		50C07C1C8431106513F84478751C730E /* ResourceBundle-BushelRefresh-BushelRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-BushelRefresh-BushelRefresh-Info.plist"; sourceTree = "<group>"; };
+		551EC9B5C829B09EB1E6F075D33F110F /* RefreshContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RefreshContainer.swift; sourceTree = "<group>"; };
+		68391CE389C21F7C229423486FF12135 /* BundleExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BundleExtensions.swift; path = BushelRefresh/Classes/BundleExtensions.swift; sourceTree = "<group>"; };
 		6B316E8EE02F87295C865CEBDFFEC0CF /* Pods-BushelRefresh_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BushelRefresh_Example-frameworks.sh"; sourceTree = "<group>"; };
 		6F802EF0CDAB6CD7C0F4EDF6712AEF79 /* BushelRefresh.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BushelRefresh.bundle; path = "BushelRefresh-BushelRefresh.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		702D1A1D4375C6776415AF9747F98605 /* DefaultInfiniteLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultInfiniteLoadingView.swift; sourceTree = "<group>"; };
+		718CD4EAE9A7D6089762453EEA65462B /* DefaultPullToRefreshView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultPullToRefreshView.swift; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		82739C98F364B2DB37E8A65AE9ADD03A /* RefreshView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
+		841E83E5787F26D2E0A2EB8A06E5321D /* DefaultInfiniteLoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = DefaultInfiniteLoadingView.xib; sourceTree = "<group>"; };
 		86AC8EE3BBC86ED1F20891A86AB32C42 /* Pods-BushelRefresh_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BushelRefresh_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8EE16D48D0836FAA82AA9ECD779CB824 /* BottomRefreshContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BottomRefreshContainer.swift; sourceTree = "<group>"; };
-		95A63DF31D2362D2462157FB8C17BF6E /* BushelRefresh.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BushelRefresh.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95F557B95E3E49C8D55D100DEC1A4DB7 /* BushelRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BushelRefresh.framework; path = BushelRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97466EA7DAA930D7E7B9FF01BC1135DD /* Pods-BushelRefresh_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BushelRefresh_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0FFBE6EC67511192E89559999EBE68F /* Pods-BushelRefresh_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BushelRefresh_Example-Info.plist"; sourceTree = "<group>"; };
-		A8DF98B92EB146BD3DACCE9D05566484 /* BushelRefresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BushelRefresh.debug.xcconfig; sourceTree = "<group>"; };
-		B4C247D26FBDF6E5C0D218F38CA291EC /* DefaultPullToRefreshView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = DefaultPullToRefreshView.xib; sourceTree = "<group>"; };
-		E3FA2C7836DEC542787491D24935B49C /* ResourceBundle-BushelRefresh-BushelRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-BushelRefresh-BushelRefresh-Info.plist"; sourceTree = "<group>"; };
-		E50D3E4D53265C117795282CA16B2FE1 /* BushelRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BushelRefresh-dummy.m"; sourceTree = "<group>"; };
+		A22C83A4DC6BE851293FB78BB1EF9E94 /* BushelRefresh-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BushelRefresh-umbrella.h"; sourceTree = "<group>"; };
+		A242853A352881E7CFE595D15E5F3B96 /* DefaultPullToRefreshView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = DefaultPullToRefreshView.xib; sourceTree = "<group>"; };
+		AB7172FFFA5312B47E0E41ED71D9B1F1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		AB85D659C9EC8858CDC9C7943C80BE74 /* BushelRefresh.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BushelRefresh.modulemap; sourceTree = "<group>"; };
+		B85BA52CC175F56A93D4F3EEBAAC9062 /* BushelRefresh.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BushelRefresh.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BBB0B98305D7549FDD8FA47BF5B1711A /* BushelRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BushelRefresh-dummy.m"; sourceTree = "<group>"; };
+		C26D594A7428252AD8756E732ED57E10 /* BushelRefresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BushelRefresh.debug.xcconfig; sourceTree = "<group>"; };
+		CB14A76FDC18C0955D3974F5C4F781AB /* DefaultInfiniteLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultInfiniteLoadingView.swift; sourceTree = "<group>"; };
+		DAE4C08B8A12FF34DB81316ED4C4B489 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		DFC3D5E57D98D3BE6DABEB1C5A6B77C3 /* BushelRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BushelRefresh-prefix.pch"; sourceTree = "<group>"; };
 		E8A789335B6707ADAC80A2C223EE0F5B /* Pods_BushelRefresh_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BushelRefresh_Example.framework; path = "Pods-BushelRefresh_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC0D3E15344D00D371ABF12A4406041F /* UIScrollView+Refresh.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Refresh.swift"; path = "BushelRefresh/Classes/UIScrollView+Refresh.swift"; sourceTree = "<group>"; };
+		E95512B6DC5523AAE5DBAD0750646FB1 /* BushelRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BushelRefresh-Info.plist"; sourceTree = "<group>"; };
+		F4AE956EC6E84752AEA7E5EB4E893344 /* UIScrollView+Refresh.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Refresh.swift"; path = "BushelRefresh/Classes/UIScrollView+Refresh.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,31 +127,30 @@
 			path = "Target Support Files/Pods-BushelRefresh_Example";
 			sourceTree = "<group>";
 		};
-		202C29B5EE16D233B4134DB86F1FC439 /* Refresh Container */ = {
+		4DFDCC66F978B70BEC2B9DAC21B7B138 /* Refresh View */ = {
 			isa = PBXGroup;
 			children = (
-				8EE16D48D0836FAA82AA9ECD779CB824 /* BottomRefreshContainer.swift */,
-				0E0E98E741399FCDD2C86D92BD00728D /* RefreshContainer.swift */,
-				05201A713F97E79EFA3474575C232B2E /* TopRefreshContainer.swift */,
+				82739C98F364B2DB37E8A65AE9ADD03A /* RefreshView.swift */,
+				5E0C807FE8BAA39F7DE6C34FFDA7A46A /* Default Infinite Loading */,
+				9BFD7B32F3AB50DBA493261A801F826A /* Default Pull To Refresh */,
 			);
-			name = "Refresh Container";
-			path = "BushelRefresh/Classes/Refresh Container";
+			name = "Refresh View";
+			path = "BushelRefresh/Classes/Refresh View";
 			sourceTree = "<group>";
 		};
-		364FCB2C5E77C1AA7715EF7D06BF9F20 /* Support Files */ = {
+		520441D081D3870B70C0EF498C36FBF1 /* BushelRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				18C15A6242FDD09FDEA4E28D51BC2E15 /* BushelRefresh.modulemap */,
-				E50D3E4D53265C117795282CA16B2FE1 /* BushelRefresh-dummy.m */,
-				14EEA4951721E73A9E769591FD33EAFB /* BushelRefresh-Info.plist */,
-				604126B0CC7DBA431E87BD9320C85B28 /* BushelRefresh-prefix.pch */,
-				4D89105CD67908A01E77CE472FBB4E01 /* BushelRefresh-umbrella.h */,
-				A8DF98B92EB146BD3DACCE9D05566484 /* BushelRefresh.debug.xcconfig */,
-				416E917CC0682449DE39C80093C7916E /* BushelRefresh.release.xcconfig */,
-				E3FA2C7836DEC542787491D24935B49C /* ResourceBundle-BushelRefresh-BushelRefresh-Info.plist */,
+				4B7D5CFBC645526CD3FEF57D77868746 /* Assets.xcassets */,
+				68391CE389C21F7C229423486FF12135 /* BundleExtensions.swift */,
+				F4AE956EC6E84752AEA7E5EB4E893344 /* UIScrollView+Refresh.swift */,
+				5FD50034D6558460E3951AC768F53496 /* Pod */,
+				6BB6475B592CB8018C1A226DF0F14ED3 /* Refresh Container */,
+				4DFDCC66F978B70BEC2B9DAC21B7B138 /* Refresh View */,
+				97E4EC0CCD034E19B7F71A508181BEE4 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/BushelRefresh";
+			name = BushelRefresh;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -162,35 +161,35 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		5A63219833789F1598C237232DA2414C /* Default Pull To Refresh */ = {
+		5E0C807FE8BAA39F7DE6C34FFDA7A46A /* Default Infinite Loading */ = {
 			isa = PBXGroup;
 			children = (
-				5FD1F61EBC1408A363189982D8FD0400 /* DefaultPullToRefreshView.swift */,
-				B4C247D26FBDF6E5C0D218F38CA291EC /* DefaultPullToRefreshView.xib */,
-			);
-			name = "Default Pull To Refresh";
-			path = "Default Pull To Refresh";
-			sourceTree = "<group>";
-		};
-		5F28E92F84F93EFA3C07DE7CD110B545 /* Refresh View */ = {
-			isa = PBXGroup;
-			children = (
-				3523A6BB300C4F557DA6D665B004610F /* RefreshView.swift */,
-				70A908E4690B09D53A9AD674B030B086 /* Default Infinite Loading */,
-				5A63219833789F1598C237232DA2414C /* Default Pull To Refresh */,
-			);
-			name = "Refresh View";
-			path = "BushelRefresh/Classes/Refresh View";
-			sourceTree = "<group>";
-		};
-		70A908E4690B09D53A9AD674B030B086 /* Default Infinite Loading */ = {
-			isa = PBXGroup;
-			children = (
-				702D1A1D4375C6776415AF9747F98605 /* DefaultInfiniteLoadingView.swift */,
-				05F7BB2C11B14148BFAAC71536E272CD /* DefaultInfiniteLoadingView.xib */,
+				CB14A76FDC18C0955D3974F5C4F781AB /* DefaultInfiniteLoadingView.swift */,
+				841E83E5787F26D2E0A2EB8A06E5321D /* DefaultInfiniteLoadingView.xib */,
 			);
 			name = "Default Infinite Loading";
 			path = "Default Infinite Loading";
+			sourceTree = "<group>";
+		};
+		5FD50034D6558460E3951AC768F53496 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				B85BA52CC175F56A93D4F3EEBAAC9062 /* BushelRefresh.podspec */,
+				DAE4C08B8A12FF34DB81316ED4C4B489 /* LICENSE */,
+				AB7172FFFA5312B47E0E41ED71D9B1F1 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		6BB6475B592CB8018C1A226DF0F14ED3 /* Refresh Container */ = {
+			isa = PBXGroup;
+			children = (
+				342002A90C8CAC87D03EAA500A1D3628 /* BottomRefreshContainer.swift */,
+				551EC9B5C829B09EB1E6F075D33F110F /* RefreshContainer.swift */,
+				440669F8400BCAB81C2ED0CD77C31795 /* TopRefreshContainer.swift */,
+			);
+			name = "Refresh Container";
+			path = "BushelRefresh/Classes/Refresh Container";
 			sourceTree = "<group>";
 		};
 		95545A759EB581CCB99F5AFB57136525 /* Targets Support Files */ = {
@@ -201,37 +200,38 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		97720E1A4E2AE761B2B6DD71ACEFC4B5 /* BushelRefresh */ = {
+		97E4EC0CCD034E19B7F71A508181BEE4 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				07A018D7705F1F4F97EFB4EAA0D7F09F /* Arrow.png */,
-				4DA2C9E5A5EEE8E53E6981ED47C9E6A3 /* BundleExtensions.swift */,
-				EC0D3E15344D00D371ABF12A4406041F /* UIScrollView+Refresh.swift */,
-				B379C512A5CBC59A6E798FA3D673AB4F /* Pod */,
-				202C29B5EE16D233B4134DB86F1FC439 /* Refresh Container */,
-				5F28E92F84F93EFA3C07DE7CD110B545 /* Refresh View */,
-				364FCB2C5E77C1AA7715EF7D06BF9F20 /* Support Files */,
+				AB85D659C9EC8858CDC9C7943C80BE74 /* BushelRefresh.modulemap */,
+				BBB0B98305D7549FDD8FA47BF5B1711A /* BushelRefresh-dummy.m */,
+				E95512B6DC5523AAE5DBAD0750646FB1 /* BushelRefresh-Info.plist */,
+				DFC3D5E57D98D3BE6DABEB1C5A6B77C3 /* BushelRefresh-prefix.pch */,
+				A22C83A4DC6BE851293FB78BB1EF9E94 /* BushelRefresh-umbrella.h */,
+				C26D594A7428252AD8756E732ED57E10 /* BushelRefresh.debug.xcconfig */,
+				388ED8D9708BC372798A09B98DDE347A /* BushelRefresh.release.xcconfig */,
+				50C07C1C8431106513F84478751C730E /* ResourceBundle-BushelRefresh-BushelRefresh-Info.plist */,
 			);
-			name = BushelRefresh;
-			path = ../..;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/BushelRefresh";
 			sourceTree = "<group>";
 		};
 		989A4A6EE4B9EFD1402A3EFEDD361F46 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				97720E1A4E2AE761B2B6DD71ACEFC4B5 /* BushelRefresh */,
+				520441D081D3870B70C0EF498C36FBF1 /* BushelRefresh */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		B379C512A5CBC59A6E798FA3D673AB4F /* Pod */ = {
+		9BFD7B32F3AB50DBA493261A801F826A /* Default Pull To Refresh */ = {
 			isa = PBXGroup;
 			children = (
-				95A63DF31D2362D2462157FB8C17BF6E /* BushelRefresh.podspec */,
-				439EA0B32EF420BF7057622ECCFBB7BA /* LICENSE */,
-				3FC5CB261781EF63ED58B1DF4FE60E75 /* README.md */,
+				718CD4EAE9A7D6089762453EEA65462B /* DefaultPullToRefreshView.swift */,
+				A242853A352881E7CFE595D15E5F3B96 /* DefaultPullToRefreshView.xib */,
 			);
-			name = Pod;
+			name = "Default Pull To Refresh";
+			path = "Default Pull To Refresh";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -291,7 +291,7 @@
 			buildPhases = (
 				D845E21EF1F7DF2027D0DF391CA71F43 /* Sources */,
 				22329EDA699C701D3969E79199D9F723 /* Frameworks */,
-				DDCE5E2E847C580345F59863793A65D5 /* Resources */,
+				0B5EBD99BE07360672AED3DD716B9DA6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -370,19 +370,19 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0B5EBD99BE07360672AED3DD716B9DA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFD5633F1E8F8E833583C0C124048D82 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56FC0B15003309D21C77FFDB758298C7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E72E72F58AAC572F08C97FCF56D42A2C /* BushelRefresh.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDCE5E2E847C580345F59863793A65D5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08971F7A291B6C317BBF662F2710CF5C /* Arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +449,7 @@
 /* Begin XCBuildConfiguration section */
 		54A7C8C2BF0ADB72EB5D3596389BE571 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 416E917CC0682449DE39C80093C7916E /* BushelRefresh.release.xcconfig */;
+			baseConfigurationReference = 388ED8D9708BC372798A09B98DDE347A /* BushelRefresh.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BushelRefresh";
 				IBSC_MODULE = BushelRefresh;
@@ -465,7 +465,7 @@
 		};
 		6AEA05C6E63E83D0697583AF74453D02 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 416E917CC0682449DE39C80093C7916E /* BushelRefresh.release.xcconfig */;
+			baseConfigurationReference = 388ED8D9708BC372798A09B98DDE347A /* BushelRefresh.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -626,7 +626,7 @@
 		};
 		88D35F9912F8B549F1C0D8F0593C4820 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8DF98B92EB146BD3DACCE9D05566484 /* BushelRefresh.debug.xcconfig */;
+			baseConfigurationReference = C26D594A7428252AD8756E732ED57E10 /* BushelRefresh.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -657,7 +657,7 @@
 		};
 		D192A16C8B1888F5D0A23EB7768A0B31 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8DF98B92EB146BD3DACCE9D05566484 /* BushelRefresh.debug.xcconfig */;
+			baseConfigurationReference = C26D594A7428252AD8756E732ED57E10 /* BushelRefresh.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BushelRefresh";
 				IBSC_MODULE = BushelRefresh;

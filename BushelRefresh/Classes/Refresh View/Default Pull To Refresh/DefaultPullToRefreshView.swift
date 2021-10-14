@@ -58,7 +58,7 @@ public class DefaultPullToRefreshView: UIView, RefreshView {
     }
 
     private func styleArrow() {
-        arrowImageView.image = UIImage(named: "Arrow", in: .resources, compatibleWith: nil)
+        arrowImageView.image = UIImage(named: "arrow_short", in: .resources, compatibleWith: nil)
         setArrowColor(.gray)
     }
 
@@ -144,6 +144,20 @@ public class DefaultPullToRefreshView: UIView, RefreshView {
 
     public func stopAnimating() {
         self.state = .stopped
+    }
+
+    
+    
+    
+    private func idealLabelWidth() {
+        let fakeLabel = UILabel()
+        fakeLabel.font = label.font
+        
+        let size = CGSize.zero
+        let strings = [stoppedTitle, triggeredTitle, loadingTitle]
+        
+        
+        
     }
 
 }
