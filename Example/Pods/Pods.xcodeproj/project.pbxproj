@@ -7,40 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06085853F8BDB5B2CEB02DA0CF003273 /* RefreshContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551EC9B5C829B09EB1E6F075D33F110F /* RefreshContainer.swift */; };
-		0CC6FDE1C82292C8A12826F1B96B58DB /* BottomRefreshContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342002A90C8CAC87D03EAA500A1D3628 /* BottomRefreshContainer.swift */; };
-		0E84C612FAC2BFF815AECBC89AFE842A /* BushelRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB0B98305D7549FDD8FA47BF5B1711A /* BushelRefresh-dummy.m */; };
-		1B2B945B2395834C487110E4D5C87F2E /* TopRefreshContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440669F8400BCAB81C2ED0CD77C31795 /* TopRefreshContainer.swift */; };
-		2E7E7FED1E5905BEBDAE944AF16F54D6 /* DefaultPullToRefreshView.xib in Sources */ = {isa = PBXBuildFile; fileRef = A242853A352881E7CFE595D15E5F3B96 /* DefaultPullToRefreshView.xib */; };
-		2F72BA9877ECC95C221FEA7BFEF69614 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		41D61EE782C0ACBA215E71069941BA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		51E7AFC8E84FAE933AC1E492D180BA76 /* Pods-BushelRefresh_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3777DB67C40451CF826976A4AE82BF83 /* Pods-BushelRefresh_Example-dummy.m */; };
-		76E20AF3248EF818BB93A5D50ED8C78A /* DefaultPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718CD4EAE9A7D6089762453EEA65462B /* DefaultPullToRefreshView.swift */; };
-		867DCF58EA35A8FD026A406610CCBBB8 /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE956EC6E84752AEA7E5EB4E893344 /* UIScrollView+Refresh.swift */; };
-		87C2EC3F8BDC7FF5498027BE4CBDD56E /* DefaultInfiniteLoadingView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 841E83E5787F26D2E0A2EB8A06E5321D /* DefaultInfiniteLoadingView.xib */; };
-		B0E26D9ACBA658C5525374B9188C4D1D /* BushelRefresh-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A22C83A4DC6BE851293FB78BB1EF9E94 /* BushelRefresh-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B29987D1C25851C7450BF72F952C2299 /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82739C98F364B2DB37E8A65AE9ADD03A /* RefreshView.swift */; };
-		D7F5C60B5B6217AD54E24A74D288EA42 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68391CE389C21F7C229423486FF12135 /* BundleExtensions.swift */; };
-		DA711781D8E68A9C3C7D1469E3683E60 /* Pods-BushelRefresh_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 368420EC3416CEBCFFA066864EA7D029 /* Pods-BushelRefresh_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E72E72F58AAC572F08C97FCF56D42A2C /* BushelRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6F802EF0CDAB6CD7C0F4EDF6712AEF79 /* BushelRefresh.bundle */; };
-		E96CD3D1C61588177F30387EA9734B1E /* DefaultInfiniteLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14A76FDC18C0955D3974F5C4F781AB /* DefaultInfiniteLoadingView.swift */; };
-		EFD5633F1E8F8E833583C0C124048D82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B7D5CFBC645526CD3FEF57D77868746 /* Assets.xcassets */; };
+		067008063C1437EF8A24E4D2119D0F7B /* DefaultInfiniteLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14A76FDC18C0955D3974F5C4F781AB /* DefaultInfiniteLoadingView.swift */; };
+		17B5959F1DA470975A0CD2300867C50F /* TopRefreshContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440669F8400BCAB81C2ED0CD77C31795 /* TopRefreshContainer.swift */; };
+		3195590AA9B0F55F0BE7903B00326F33 /* BottomRefreshContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342002A90C8CAC87D03EAA500A1D3628 /* BottomRefreshContainer.swift */; };
+		3223FBEB9B49EFC8898A2110C4DADB58 /* BushelRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB0B98305D7549FDD8FA47BF5B1711A /* BushelRefresh-dummy.m */; };
+		38BA007050D8C282D7ADA9B385D22298 /* Pods-BushelRefresh_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3777DB67C40451CF826976A4AE82BF83 /* Pods-BushelRefresh_Example-dummy.m */; };
+		501FB2C4D97FEF595E1FA8CE02CBF563 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68391CE389C21F7C229423486FF12135 /* BundleExtensions.swift */; };
+		5BA2BD051F2E028EA1311CEE02484CA4 /* DefaultInfiniteLoadingView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 841E83E5787F26D2E0A2EB8A06E5321D /* DefaultInfiniteLoadingView.xib */; };
+		68ACE8ABFBD1BA8DEA78F00DA41A341B /* Pods-BushelRefresh_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 368420EC3416CEBCFFA066864EA7D029 /* Pods-BushelRefresh_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		85D784001FFD21029C52F053E5B584EB /* BushelRefresh-BushelRefresh in Resources */ = {isa = PBXBuildFile; fileRef = 6F802EF0CDAB6CD7C0F4EDF6712AEF79 /* BushelRefresh-BushelRefresh */; };
+		866378E1F51A503CD73767A0F5D18798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B7D5CFBC645526CD3FEF57D77868746 /* Assets.xcassets */; };
+		8EDD8927DBFB74AF576E95501579CAA0 /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82739C98F364B2DB37E8A65AE9ADD03A /* RefreshView.swift */; };
+		A81B2919555563FE843E843502327384 /* RefreshContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551EC9B5C829B09EB1E6F075D33F110F /* RefreshContainer.swift */; };
+		B3AF46BE338C415F2106C5C7A1884B81 /* DefaultPullToRefreshView.xib in Sources */ = {isa = PBXBuildFile; fileRef = A242853A352881E7CFE595D15E5F3B96 /* DefaultPullToRefreshView.xib */; };
+		B87C5E3B5E43E8AB5EB21F2EE87C8D8E /* BushelRefresh-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A22C83A4DC6BE851293FB78BB1EF9E94 /* BushelRefresh-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC398D200EB5590DC57C79500B716524 /* DefaultPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718CD4EAE9A7D6089762453EEA65462B /* DefaultPullToRefreshView.swift */; };
+		BEC7E52003FC1BEC97D4CBB89CF81E73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		D395DEE816723438CC95EF4B9E1533B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		FF7EFAA574BB2CB4FAD2DBF5B7B16B0D /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE956EC6E84752AEA7E5EB4E893344 /* UIScrollView+Refresh.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2A07AC98782C92C8E59838CDD1F37643 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 15AED4FCCD5DC051A42100A66B61042F;
-			remoteInfo = "BushelRefresh-BushelRefresh";
-		};
-		63C77E070E68616517B17AC4290B3D87 /* PBXContainerItemProxy */ = {
+		4093272FBD9315257143ED3C82EF962F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4384F3046A5260D6337240DF2E9CDD4F;
 			remoteInfo = BushelRefresh;
+		};
+		CA412F8D7AC041BF4BA0893EB7B074E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15AED4FCCD5DC051A42100A66B61042F;
+			remoteInfo = "BushelRefresh-BushelRefresh";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -58,13 +58,13 @@
 		551EC9B5C829B09EB1E6F075D33F110F /* RefreshContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RefreshContainer.swift; sourceTree = "<group>"; };
 		68391CE389C21F7C229423486FF12135 /* BundleExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BundleExtensions.swift; path = BushelRefresh/Classes/BundleExtensions.swift; sourceTree = "<group>"; };
 		6B316E8EE02F87295C865CEBDFFEC0CF /* Pods-BushelRefresh_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BushelRefresh_Example-frameworks.sh"; sourceTree = "<group>"; };
-		6F802EF0CDAB6CD7C0F4EDF6712AEF79 /* BushelRefresh.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BushelRefresh.bundle; path = "BushelRefresh-BushelRefresh.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F802EF0CDAB6CD7C0F4EDF6712AEF79 /* BushelRefresh-BushelRefresh */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "BushelRefresh-BushelRefresh"; path = BushelRefresh.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		718CD4EAE9A7D6089762453EEA65462B /* DefaultPullToRefreshView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultPullToRefreshView.swift; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		82739C98F364B2DB37E8A65AE9ADD03A /* RefreshView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		841E83E5787F26D2E0A2EB8A06E5321D /* DefaultInfiniteLoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = DefaultInfiniteLoadingView.xib; sourceTree = "<group>"; };
 		86AC8EE3BBC86ED1F20891A86AB32C42 /* Pods-BushelRefresh_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BushelRefresh_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		95F557B95E3E49C8D55D100DEC1A4DB7 /* BushelRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BushelRefresh.framework; path = BushelRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F557B95E3E49C8D55D100DEC1A4DB7 /* BushelRefresh */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BushelRefresh; path = BushelRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97466EA7DAA930D7E7B9FF01BC1135DD /* Pods-BushelRefresh_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BushelRefresh_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0FFBE6EC67511192E89559999EBE68F /* Pods-BushelRefresh_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BushelRefresh_Example-Info.plist"; sourceTree = "<group>"; };
@@ -78,32 +78,32 @@
 		CB14A76FDC18C0955D3974F5C4F781AB /* DefaultInfiniteLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultInfiniteLoadingView.swift; sourceTree = "<group>"; };
 		DAE4C08B8A12FF34DB81316ED4C4B489 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		DFC3D5E57D98D3BE6DABEB1C5A6B77C3 /* BushelRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BushelRefresh-prefix.pch"; sourceTree = "<group>"; };
-		E8A789335B6707ADAC80A2C223EE0F5B /* Pods_BushelRefresh_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BushelRefresh_Example.framework; path = "Pods-BushelRefresh_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8A789335B6707ADAC80A2C223EE0F5B /* Pods-BushelRefresh_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-BushelRefresh_Example"; path = Pods_BushelRefresh_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95512B6DC5523AAE5DBAD0750646FB1 /* BushelRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BushelRefresh-Info.plist"; sourceTree = "<group>"; };
 		F4AE956EC6E84752AEA7E5EB4E893344 /* UIScrollView+Refresh.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Refresh.swift"; path = "BushelRefresh/Classes/UIScrollView+Refresh.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		22329EDA699C701D3969E79199D9F723 /* Frameworks */ = {
+		3AB055BA7BBECEC62C97578EAC2F2A9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEC7E52003FC1BEC97D4CBB89CF81E73 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5299C2A6C1C0F717DF63D5DC60E9AD3F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59A699E759DE25F9D08DE993DBD194B1 /* Frameworks */ = {
+		EC14FD3FD9E6E2D01380726B2F5D6C78 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41D61EE782C0ACBA215E71069941BA37 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B1EEB78A78FB9E69F3C1E35CBB1839E1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2F72BA9877ECC95C221FEA7BFEF69614 /* Foundation.framework in Frameworks */,
+				D395DEE816723438CC95EF4B9E1533B2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +125,16 @@
 			);
 			name = "Pods-BushelRefresh_Example";
 			path = "Target Support Files/Pods-BushelRefresh_Example";
+			sourceTree = "<group>";
+		};
+		3A6451DC0A83A9496426E78706E18E26 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95F557B95E3E49C8D55D100DEC1A4DB7 /* BushelRefresh */,
+				6F802EF0CDAB6CD7C0F4EDF6712AEF79 /* BushelRefresh-BushelRefresh */,
+				E8A789335B6707ADAC80A2C223EE0F5B /* Pods-BushelRefresh_Example */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		4DFDCC66F978B70BEC2B9DAC21B7B138 /* Refresh View */ = {
@@ -240,7 +250,7 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				989A4A6EE4B9EFD1402A3EFEDD361F46 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				F377EF3883EF9192967B5EDA5ACA9843 /* Products */,
+				3A6451DC0A83A9496426E78706E18E26 /* Products */,
 				95545A759EB581CCB99F5AFB57136525 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -253,32 +263,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F377EF3883EF9192967B5EDA5ACA9843 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6F802EF0CDAB6CD7C0F4EDF6712AEF79 /* BushelRefresh.bundle */,
-				95F557B95E3E49C8D55D100DEC1A4DB7 /* BushelRefresh.framework */,
-				E8A789335B6707ADAC80A2C223EE0F5B /* Pods_BushelRefresh_Example.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		756146265329133D99B2A44C989E39A8 /* Headers */ = {
+		9A01D2AF6D7F15A4D161F69D28609BDD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0E26D9ACBA658C5525374B9188C4D1D /* BushelRefresh-umbrella.h in Headers */,
+				B87C5E3B5E43E8AB5EB21F2EE87C8D8E /* BushelRefresh-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83B62C60E0F663D034597E002A1C4F18 /* Headers */ = {
+		FB2BCDE866E7BBF82DCBDA9A29082E84 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA711781D8E68A9C3C7D1469E3683E60 /* Pods-BushelRefresh_Example-umbrella.h in Headers */,
+				68ACE8ABFBD1BA8DEA78F00DA41A341B /* Pods-BushelRefresh_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,57 +287,57 @@
 /* Begin PBXNativeTarget section */
 		15AED4FCCD5DC051A42100A66B61042F /* BushelRefresh-BushelRefresh */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 28D3CF85E78EC0F056CF68087AEBDB43 /* Build configuration list for PBXNativeTarget "BushelRefresh-BushelRefresh" */;
+			buildConfigurationList = 5E7DA2455E1C2C988D75A78E07640B4C /* Build configuration list for PBXNativeTarget "BushelRefresh-BushelRefresh" */;
 			buildPhases = (
-				D845E21EF1F7DF2027D0DF391CA71F43 /* Sources */,
-				22329EDA699C701D3969E79199D9F723 /* Frameworks */,
-				0B5EBD99BE07360672AED3DD716B9DA6 /* Resources */,
+				ABCD72DCD0EA9361251954A510378B05 /* Sources */,
+				5299C2A6C1C0F717DF63D5DC60E9AD3F /* Frameworks */,
+				DBE99222EC77598D84945387A5EDB021 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "BushelRefresh-BushelRefresh";
-			productName = "BushelRefresh-BushelRefresh";
-			productReference = 6F802EF0CDAB6CD7C0F4EDF6712AEF79 /* BushelRefresh.bundle */;
+			productName = BushelRefresh;
+			productReference = 6F802EF0CDAB6CD7C0F4EDF6712AEF79 /* BushelRefresh-BushelRefresh */;
 			productType = "com.apple.product-type.bundle";
 		};
 		41D72704EE07380048205349DC712B15 /* Pods-BushelRefresh_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F9A6AE536036EACC74C8731982A48027 /* Build configuration list for PBXNativeTarget "Pods-BushelRefresh_Example" */;
+			buildConfigurationList = 643233C5072CA1802EAC74B2C654450A /* Build configuration list for PBXNativeTarget "Pods-BushelRefresh_Example" */;
 			buildPhases = (
-				83B62C60E0F663D034597E002A1C4F18 /* Headers */,
-				03F65D099B114FF4E67FB6B40C24CC10 /* Sources */,
-				B1EEB78A78FB9E69F3C1E35CBB1839E1 /* Frameworks */,
-				E53E4BF369070210E82FA95984736832 /* Resources */,
+				FB2BCDE866E7BBF82DCBDA9A29082E84 /* Headers */,
+				B9554A1C881CFEF7E8B9DFBE5E1735B7 /* Sources */,
+				3AB055BA7BBECEC62C97578EAC2F2A9B /* Frameworks */,
+				E843EB946C93BD159728FD363BDB2291 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8382EA9692B059517A4B1E81FD6ECE8F /* PBXTargetDependency */,
+				97651BEE6A559AE9E16F6C36926B11E7 /* PBXTargetDependency */,
 			);
 			name = "Pods-BushelRefresh_Example";
-			productName = "Pods-BushelRefresh_Example";
-			productReference = E8A789335B6707ADAC80A2C223EE0F5B /* Pods_BushelRefresh_Example.framework */;
+			productName = Pods_BushelRefresh_Example;
+			productReference = E8A789335B6707ADAC80A2C223EE0F5B /* Pods-BushelRefresh_Example */;
 			productType = "com.apple.product-type.framework";
 		};
 		4384F3046A5260D6337240DF2E9CDD4F /* BushelRefresh */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D1E17D2190A4E4DDD8CFEC9029620598 /* Build configuration list for PBXNativeTarget "BushelRefresh" */;
+			buildConfigurationList = 4FA229782A9F3A989BA13A86D8F10152 /* Build configuration list for PBXNativeTarget "BushelRefresh" */;
 			buildPhases = (
-				756146265329133D99B2A44C989E39A8 /* Headers */,
-				8FFCA758E06B596BA1F5FCC9589DAFF5 /* Sources */,
-				59A699E759DE25F9D08DE993DBD194B1 /* Frameworks */,
-				56FC0B15003309D21C77FFDB758298C7 /* Resources */,
+				9A01D2AF6D7F15A4D161F69D28609BDD /* Headers */,
+				C887A01ACAE68BEE0C10416C1FC99623 /* Sources */,
+				EC14FD3FD9E6E2D01380726B2F5D6C78 /* Frameworks */,
+				074FD678C02166EAF14E1FBDB794E247 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				75BA2141554D6532C3386229E5FD940C /* PBXTargetDependency */,
+				86729154981388C9045D4B96D0D29B28 /* PBXTargetDependency */,
 			);
 			name = BushelRefresh;
 			productName = BushelRefresh;
-			productReference = 95F557B95E3E49C8D55D100DEC1A4DB7 /* BushelRefresh.framework */;
+			productReference = 95F557B95E3E49C8D55D100DEC1A4DB7 /* BushelRefresh */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -346,19 +346,19 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = F377EF3883EF9192967B5EDA5ACA9843 /* Products */;
+			productRefGroup = 3A6451DC0A83A9496426E78706E18E26 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -370,23 +370,23 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0B5EBD99BE07360672AED3DD716B9DA6 /* Resources */ = {
+		074FD678C02166EAF14E1FBDB794E247 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFD5633F1E8F8E833583C0C124048D82 /* Assets.xcassets in Resources */,
+				85D784001FFD21029C52F053E5B584EB /* BushelRefresh-BushelRefresh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56FC0B15003309D21C77FFDB758298C7 /* Resources */ = {
+		DBE99222EC77598D84945387A5EDB021 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E72E72F58AAC572F08C97FCF56D42A2C /* BushelRefresh.bundle in Resources */,
+				866378E1F51A503CD73767A0F5D18798 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E53E4BF369070210E82FA95984736832 /* Resources */ = {
+		E843EB946C93BD159728FD363BDB2291 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -396,74 +396,58 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		03F65D099B114FF4E67FB6B40C24CC10 /* Sources */ = {
+		ABCD72DCD0EA9361251954A510378B05 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51E7AFC8E84FAE933AC1E492D180BA76 /* Pods-BushelRefresh_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8FFCA758E06B596BA1F5FCC9589DAFF5 /* Sources */ = {
+		B9554A1C881CFEF7E8B9DFBE5E1735B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CC6FDE1C82292C8A12826F1B96B58DB /* BottomRefreshContainer.swift in Sources */,
-				D7F5C60B5B6217AD54E24A74D288EA42 /* BundleExtensions.swift in Sources */,
-				0E84C612FAC2BFF815AECBC89AFE842A /* BushelRefresh-dummy.m in Sources */,
-				E96CD3D1C61588177F30387EA9734B1E /* DefaultInfiniteLoadingView.swift in Sources */,
-				87C2EC3F8BDC7FF5498027BE4CBDD56E /* DefaultInfiniteLoadingView.xib in Sources */,
-				76E20AF3248EF818BB93A5D50ED8C78A /* DefaultPullToRefreshView.swift in Sources */,
-				2E7E7FED1E5905BEBDAE944AF16F54D6 /* DefaultPullToRefreshView.xib in Sources */,
-				06085853F8BDB5B2CEB02DA0CF003273 /* RefreshContainer.swift in Sources */,
-				B29987D1C25851C7450BF72F952C2299 /* RefreshView.swift in Sources */,
-				1B2B945B2395834C487110E4D5C87F2E /* TopRefreshContainer.swift in Sources */,
-				867DCF58EA35A8FD026A406610CCBBB8 /* UIScrollView+Refresh.swift in Sources */,
+				38BA007050D8C282D7ADA9B385D22298 /* Pods-BushelRefresh_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D845E21EF1F7DF2027D0DF391CA71F43 /* Sources */ = {
+		C887A01ACAE68BEE0C10416C1FC99623 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3195590AA9B0F55F0BE7903B00326F33 /* BottomRefreshContainer.swift in Sources */,
+				501FB2C4D97FEF595E1FA8CE02CBF563 /* BundleExtensions.swift in Sources */,
+				3223FBEB9B49EFC8898A2110C4DADB58 /* BushelRefresh-dummy.m in Sources */,
+				067008063C1437EF8A24E4D2119D0F7B /* DefaultInfiniteLoadingView.swift in Sources */,
+				5BA2BD051F2E028EA1311CEE02484CA4 /* DefaultInfiniteLoadingView.xib in Sources */,
+				BC398D200EB5590DC57C79500B716524 /* DefaultPullToRefreshView.swift in Sources */,
+				B3AF46BE338C415F2106C5C7A1884B81 /* DefaultPullToRefreshView.xib in Sources */,
+				A81B2919555563FE843E843502327384 /* RefreshContainer.swift in Sources */,
+				8EDD8927DBFB74AF576E95501579CAA0 /* RefreshView.swift in Sources */,
+				17B5959F1DA470975A0CD2300867C50F /* TopRefreshContainer.swift in Sources */,
+				FF7EFAA574BB2CB4FAD2DBF5B7B16B0D /* UIScrollView+Refresh.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		75BA2141554D6532C3386229E5FD940C /* PBXTargetDependency */ = {
+		86729154981388C9045D4B96D0D29B28 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "BushelRefresh-BushelRefresh";
 			target = 15AED4FCCD5DC051A42100A66B61042F /* BushelRefresh-BushelRefresh */;
-			targetProxy = 2A07AC98782C92C8E59838CDD1F37643 /* PBXContainerItemProxy */;
+			targetProxy = CA412F8D7AC041BF4BA0893EB7B074E7 /* PBXContainerItemProxy */;
 		};
-		8382EA9692B059517A4B1E81FD6ECE8F /* PBXTargetDependency */ = {
+		97651BEE6A559AE9E16F6C36926B11E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BushelRefresh;
 			target = 4384F3046A5260D6337240DF2E9CDD4F /* BushelRefresh */;
-			targetProxy = 63C77E070E68616517B17AC4290B3D87 /* PBXContainerItemProxy */;
+			targetProxy = 4093272FBD9315257143ED3C82EF962F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		54A7C8C2BF0ADB72EB5D3596389BE571 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 388ED8D9708BC372798A09B98DDE347A /* BushelRefresh.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BushelRefresh";
-				IBSC_MODULE = BushelRefresh;
-				INFOPLIST_FILE = "Target Support Files/BushelRefresh/ResourceBundle-BushelRefresh-BushelRefresh-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PRODUCT_NAME = BushelRefresh;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		6AEA05C6E63E83D0697583AF74453D02 /* Release */ = {
+		2C012FD2358178C57A41BF753B0508EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 388ED8D9708BC372798A09B98DDE347A /* BushelRefresh.release.xcconfig */;
 			buildSettings = {
@@ -494,6 +478,39 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		32A3A4420729F59DDF5AD0F3851E551E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97466EA7DAA930D7E7B9FF01BC1135DD /* Pods-BushelRefresh_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BushelRefresh_Example/Pods-BushelRefresh_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BushelRefresh_Example/Pods-BushelRefresh_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -557,74 +574,7 @@
 			};
 			name = Release;
 		};
-		836FE9CC511AA4E288A40EAC3B040873 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 138BF4DC720ABB8816F473D2F4462CE0 /* Pods-BushelRefresh_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BushelRefresh_Example/Pods-BushelRefresh_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BushelRefresh_Example/Pods-BushelRefresh_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		856DDFF3DA760BE88D1F171DF0044CEC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97466EA7DAA930D7E7B9FF01BC1135DD /* Pods-BushelRefresh_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BushelRefresh_Example/Pods-BushelRefresh_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BushelRefresh_Example/Pods-BushelRefresh_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		88D35F9912F8B549F1C0D8F0593C4820 /* Debug */ = {
+		B8113C2512170F84364B79DA45CFD6C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C26D594A7428252AD8756E732ED57E10 /* BushelRefresh.debug.xcconfig */;
 			buildSettings = {
@@ -655,7 +605,7 @@
 			};
 			name = Debug;
 		};
-		D192A16C8B1888F5D0A23EB7768A0B31 /* Debug */ = {
+		B8F3D5E3479D4961A5F8B8C8EA84CAE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C26D594A7428252AD8756E732ED57E10 /* BushelRefresh.debug.xcconfig */;
 			buildSettings = {
@@ -737,18 +687,59 @@
 			};
 			name = Debug;
 		};
+		D71633C8DEF421C631359F9E9D0051E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 388ED8D9708BC372798A09B98DDE347A /* BushelRefresh.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BushelRefresh";
+				IBSC_MODULE = BushelRefresh;
+				INFOPLIST_FILE = "Target Support Files/BushelRefresh/ResourceBundle-BushelRefresh-BushelRefresh-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = BushelRefresh;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		E0270C15DB65392F1BAB938500ACA586 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 138BF4DC720ABB8816F473D2F4462CE0 /* Pods-BushelRefresh_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BushelRefresh_Example/Pods-BushelRefresh_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BushelRefresh_Example/Pods-BushelRefresh_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		28D3CF85E78EC0F056CF68087AEBDB43 /* Build configuration list for PBXNativeTarget "BushelRefresh-BushelRefresh" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D192A16C8B1888F5D0A23EB7768A0B31 /* Debug */,
-				54A7C8C2BF0ADB72EB5D3596389BE571 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -758,20 +749,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D1E17D2190A4E4DDD8CFEC9029620598 /* Build configuration list for PBXNativeTarget "BushelRefresh" */ = {
+		4FA229782A9F3A989BA13A86D8F10152 /* Build configuration list for PBXNativeTarget "BushelRefresh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				88D35F9912F8B549F1C0D8F0593C4820 /* Debug */,
-				6AEA05C6E63E83D0697583AF74453D02 /* Release */,
+				B8113C2512170F84364B79DA45CFD6C9 /* Debug */,
+				2C012FD2358178C57A41BF753B0508EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F9A6AE536036EACC74C8731982A48027 /* Build configuration list for PBXNativeTarget "Pods-BushelRefresh_Example" */ = {
+		5E7DA2455E1C2C988D75A78E07640B4C /* Build configuration list for PBXNativeTarget "BushelRefresh-BushelRefresh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				856DDFF3DA760BE88D1F171DF0044CEC /* Debug */,
-				836FE9CC511AA4E288A40EAC3B040873 /* Release */,
+				B8F3D5E3479D4961A5F8B8C8EA84CAE0 /* Debug */,
+				D71633C8DEF421C631359F9E9D0051E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		643233C5072CA1802EAC74B2C654450A /* Build configuration list for PBXNativeTarget "Pods-BushelRefresh_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32A3A4420729F59DDF5AD0F3851E551E /* Debug */,
+				E0270C15DB65392F1BAB938500ACA586 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

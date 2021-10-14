@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,38 +20,30 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_short" translatesAutoresizingMaskIntoConstraints="NO" id="Tru-Cf-Um4">
-                    <rect key="frame" x="183.5" y="76" width="24" height="24"/>
-                </imageView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="NXr-Pz-Pgg">
-                    <rect key="frame" x="185.5" y="78" width="20" height="20"/>
+                    <rect key="frame" x="230" y="78" width="20" height="20"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemRedColor"/>
             <constraints>
-                <constraint firstItem="eLv-Ey-MZu" firstAttribute="leading" secondItem="Tru-Cf-Um4" secondAttribute="trailing" constant="12" id="3OB-nJ-fI7"/>
                 <constraint firstItem="NXr-Pz-Pgg" firstAttribute="centerY" secondItem="kQy-OG-s74" secondAttribute="centerY" id="3nR-1L-gAc"/>
-                <constraint firstItem="Tru-Cf-Um4" firstAttribute="centerY" secondItem="kQy-OG-s74" secondAttribute="centerY" id="IW3-R1-8Pw"/>
-                <constraint firstItem="NXr-Pz-Pgg" firstAttribute="centerX" secondItem="Tru-Cf-Um4" secondAttribute="centerX" id="LHB-C0-25B"/>
+                <constraint firstItem="NXr-Pz-Pgg" firstAttribute="centerY" secondItem="eLv-Ey-MZu" secondAttribute="centerY" id="JCY-M6-Uo1"/>
                 <constraint firstItem="eLv-Ey-MZu" firstAttribute="centerY" secondItem="kQy-OG-s74" secondAttribute="centerY" id="NGf-ph-GaF"/>
                 <constraint firstItem="eLv-Ey-MZu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kQy-OG-s74" secondAttribute="top" constant="12" id="XKp-Q1-9tY"/>
                 <constraint firstItem="eLv-Ey-MZu" firstAttribute="centerX" secondItem="kQy-OG-s74" secondAttribute="centerX" id="YEj-pm-smV"/>
-                <constraint firstItem="Tru-Cf-Um4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kQy-OG-s74" secondAttribute="leading" constant="24" id="dEV-U1-1EW"/>
-                <constraint firstItem="Tru-Cf-Um4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kQy-OG-s74" secondAttribute="top" constant="12" id="yIv-gO-2Wh"/>
+                <constraint firstItem="NXr-Pz-Pgg" firstAttribute="centerX" secondItem="eLv-Ey-MZu" secondAttribute="centerX" id="tqa-z6-k0i"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="activityIndicator" destination="NXr-Pz-Pgg" id="i8B-z2-obh"/>
-                <outlet property="arrowImageView" destination="Tru-Cf-Um4" id="sbS-Sx-Xc3"/>
                 <outlet property="label" destination="eLv-Ey-MZu" id="DqY-ke-SWa"/>
             </connections>
             <point key="canvasLocation" x="-107.24637681159422" y="-220.3125"/>
         </view>
     </objects>
     <resources>
-        <image name="arrow_short" width="24" height="24"/>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
